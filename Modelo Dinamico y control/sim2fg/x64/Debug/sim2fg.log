@@ -1,0 +1,10 @@
+﻿Build started 16/01/2015 14:00:56.
+     1>Project "C:\Users\david.torres\Documents\WORK\CarefreeDT\f16simulator\sim2fg\sim2fg.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Program Files\MATLAB\R2014b\extern\include" /I"C:\Program Files\MATLAB\R2014b\simulink\include" /Zi /nologo /W4 /WX- /Od /D MATLAB_MEX_FILE /D WIN64 /D _DEBUG /D _WINDOWS /D _USRDLL /D SIM2FG_EXPORTS /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /errorReport:prompt sim2fg.cpp
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Platforms\x64\Microsoft.Cpp.x64.targets(146,5): error MSB6006: "CL.exe" exited with code -1073741515.
+     1>Done Building Project "C:\Users\david.torres\Documents\WORK\CarefreeDT\f16simulator\sim2fg\sim2fg.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.12
