@@ -1,2 +1,0 @@
-LIBRARY "simrunrt.mexw64"
- EXPORTS mexFunction
