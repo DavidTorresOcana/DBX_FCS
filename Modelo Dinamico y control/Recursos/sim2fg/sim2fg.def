@@ -1,0 +1,2 @@
+LIBRARY "sim2fg.mexw64"
+ EXPORTS mexFunction
