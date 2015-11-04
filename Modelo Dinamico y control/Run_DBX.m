@@ -13,8 +13,13 @@ SetupComplete;
 close all
 
 % Airport
-latitude=52.0733;
-longitude=0.6278;
+latitude=40.463650;
+longitude=-3.554389;
+airport_alt = 587.5;
+
+% latitude=0.463650;
+% longitude=-0.554389;
+
 
 close all
 % return
