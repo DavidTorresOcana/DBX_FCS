@@ -20,7 +20,6 @@ airport_alt = 587.5;
 % latitude=0.463650;
 % longitude=-0.554389;
 
-
 close all
 % return
 %% CA settings
