@@ -14,7 +14,7 @@ theta_tau = 0.7; % segundos de la respuesta
 theta_K_b = 3;
 theta_f_i = 0.2;
 
-psi_tau = 1.5; % segundos de la respuesta
+psi_tau = 4; % segundos de la respuesta
 psi_K_b = 2.5;
 psi_f_i = 0.1;
 
