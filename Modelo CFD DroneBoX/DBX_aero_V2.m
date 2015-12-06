@@ -380,11 +380,19 @@ end
 legend(legend_str)
 return
 
-%% C_m_delta_ele efectivo
-C_m_delta_ele_MAT = (C_m(:,:,3)-C_m(:,:,1))./deg2rad(delta_elev_unique(3)-delta_elev_unique(1)),
-surf(repmat(Alpha_unique,1,3),repmat(Beta_unique',6,1),C_m_delta_ele_MAT)
+% C_m_delta_ele efectivo
+surf(repmat(Alpha_unique,1,size(delta_elev_unique,1)),repmat(delta_elev_unique',size(Alpha_unique,1),1),DBX_aero.C_m_delta_elev(:,:))
+for j=1:size(delta_elev_unique,1)
+    for i=1:size(Alpha_unique,1)
+        C_m_delta_ele_MAT(i,j) = DBX_aero.C_m_delta_elev(i,j)./delta_elev_unique(j);
+        if isnan(C_m_delta_ele_MAT(i,j))
+            C_m_delta_ele_MAT(i,j) = [];
+        end
+    end
+end
+surf(repmat(Alpha_unique,1,size(delta_elev_unique,1)),repmat(delta_elev_unique',size(Alpha_unique,1),1),C_m_delta_ele_MAT(:,:))
 
-C_m_delta_rv_sim = mean(C_m_delta_ele_MAT(1:end-1,2));
+C_m_delta_rv_sim = mean(isnan(C_m_delta_ele_MAT(:,2:end-1)));
 
 pause
 

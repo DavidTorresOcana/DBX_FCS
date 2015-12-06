@@ -16,7 +16,6 @@ cd data
 % Extraer tabla CFD
 Tabla_CFD = Import_CFD_table('Hoja de casos CFD.xlsx');
 
-
 for i = 1:size_dir_list
     cd (dir_list{i})
     file_list_struct = get_xflow_files;
@@ -42,7 +41,7 @@ end
 
 cd(curr_path)
 %% Congruencia de signos
-% De acerudo con el documento Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Guia xflow.docx 
+% De acuerdo con el documento Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Guia xflow.docx 
 for i = 1:size(xflow_data,2)
     xflow_data(i).delta_r_deg = - xflow_data(i).delta_r_deg;
 end
@@ -74,22 +73,22 @@ for i = 1:size(xflow_data,2)
     Aero_Forc_Mom_data(i).delta_e_deg   = xflow_data(i).delta_e_deg;
     Aero_Forc_Mom_data(i).delta_r_deg   = xflow_data(i).delta_r_deg;
     % Fuerzas
-    Aero_Forc_Mom_data(i).Fx_N = xflow_data(i).Fx_N;
-    Aero_Forc_Mom_data(i).Fy_N = xflow_data(i).Fy_N;    
-    Aero_Forc_Mom_data(i).Fz_N = xflow_data(i).Fz_N;
+    Aero_Forc_Mom_data(i).Fx_N          = xflow_data(i).Fx_N;
+    Aero_Forc_Mom_data(i).Fy_N          = xflow_data(i).Fy_N;    
+    Aero_Forc_Mom_data(i).Fz_N          = xflow_data(i).Fz_N;
     
     % Momentos y traslacion de fuerzas
     Moments = [xflow_data(i).Mx_Nm;xflow_data(i).My_Nm;xflow_data(i).Mz_Nm] + ...
         cross(r_morro, [xflow_data(i).Fx_N;xflow_data(i).Fy_N;xflow_data(i).Fz_N])';
-    Aero_Forc_Mom_data(i).Mx_Nm = Moments(1);
-    Aero_Forc_Mom_data(i).My_Nm = Moments(2);
-    Aero_Forc_Mom_data(i).Mz_Nm = Moments(3);
+    Aero_Forc_Mom_data(i).Mx_Nm         = Moments(1);
+    Aero_Forc_Mom_data(i).My_Nm         = Moments(2);
+    Aero_Forc_Mom_data(i).Mz_Nm         = Moments(3);
     
     %Fuerzas en Wind axes
     Forces_F_w = BodyAxes2WindAxes( [xflow_data(i).Fx_N;xflow_data(i).Fy_N;xflow_data(i).Fz_N] ...
         ,deg2rad( xflow_data(i).alfa_deg ), deg2rad( xflow_data(i).beta_deg )  );
-    Aero_Forc_Mom_data(i).L_N = - Forces_F_w(3);
-    Aero_Forc_Mom_data(i).D_N = - Forces_F_w(1);
+    Aero_Forc_Mom_data(i).L_N           = - Forces_F_w(3);
+    Aero_Forc_Mom_data(i).D_N           = - Forces_F_w(1);
     
 end
 
