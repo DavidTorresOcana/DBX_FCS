@@ -2,7 +2,7 @@ close all
 %% De acuerdo al modelo aerodinamico definido en 
 % Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Modelo aerodinamico V2.docx
 %% Import the data
-[~, ~, raw] = xlsread('.\Datos Aero DBX v2.xlsx','Raw Data','A2:M104');
+[~, ~, raw] = xlsread('.\Datos Aero DBX v2.xlsx','Raw Data',['A2:M',num2str(size(Aero_Forc_Mom_data,2)+1)]);
 
 %% Create output variable
 data = reshape([raw{:}],size(raw));
@@ -94,7 +94,9 @@ for j=1:size(Beta_unique,1)
         if (90==Beta_unique(j))
             idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==90) );
         end
-        DBX_aero.C_Y(i,j) = C_y(idx);
+        try
+            DBX_aero.C_Y(i,j) = C_y(idx);
+        end
     end
 end
 figure
