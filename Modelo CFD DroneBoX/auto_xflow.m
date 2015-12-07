@@ -84,9 +84,9 @@ for i = 1:size(xflow_data,2)
     Aero_Forc_Mom_data(i).My_Nm         = Moments(2);
     Aero_Forc_Mom_data(i).Mz_Nm         = Moments(3);
     
-    %Fuerzas en Wind axes
-    Forces_F_w = BodyAxes2WindAxes( [xflow_data(i).Fx_N;xflow_data(i).Fy_N;xflow_data(i).Fz_N] ...
-        ,deg2rad( xflow_data(i).alfa_deg ), deg2rad( xflow_data(i).beta_deg )  );
+    %Fuerzas en Wind axes: FIXME: no se si esto esta bien
+    Forces_F_w = BodyAxes2WindAxes_AoA( [xflow_data(i).Fx_N;xflow_data(i).Fy_N;xflow_data(i).Fz_N] ...
+        ,deg2rad( xflow_data(i).alfa_deg )  );
     Aero_Forc_Mom_data(i).L_N           = - Forces_F_w(3);
     Aero_Forc_Mom_data(i).D_N           = - Forces_F_w(1);
     
@@ -100,7 +100,7 @@ CMA         = 0.25; % m cuerda media aerodinamica
 
 for i = 1:size(xflow_data,2)
     TAS = Aero_Forc_Mom_data(i).speed_mps;
-    q = 1/2*rho_ref*S_w*TAS^2;
+    q = 1/2*rho_ref*TAS^2;
     
     Aero_Coef_data(i).alfa_deg      = Aero_Forc_Mom_data(i).alfa_deg;
     Aero_Coef_data(i).beta_deg      = Aero_Forc_Mom_data(i).beta_deg;
@@ -108,16 +108,16 @@ for i = 1:size(xflow_data,2)
     Aero_Coef_data(i).delta_e_deg   = Aero_Forc_Mom_data(i).delta_e_deg;
     Aero_Coef_data(i).delta_r_deg   = Aero_Forc_Mom_data(i).delta_r_deg;
     
-    Aero_Coef_data(i).C_x           = Aero_Forc_Mom_data(i).Fx_N/q;
-    Aero_Coef_data(i).C_y           = Aero_Forc_Mom_data(i).Fy_N/q;    
-    Aero_Coef_data(i).C_z           = Aero_Forc_Mom_data(i).Fz_N/q;
+    Aero_Coef_data(i).C_x           = Aero_Forc_Mom_data(i).Fx_N/(q*S_w);
+    Aero_Coef_data(i).C_y           = Aero_Forc_Mom_data(i).Fy_N/(q*S_w);    
+    Aero_Coef_data(i).C_z           = Aero_Forc_Mom_data(i).Fz_N/(q*S_w);
     
-    Aero_Coef_data(i).C_l           = Aero_Forc_Mom_data(i).Mx_Nm/(q*b_span);
-    Aero_Coef_data(i).C_m           = Aero_Forc_Mom_data(i).My_Nm/(q*CMA);
-    Aero_Coef_data(i).C_n           = Aero_Forc_Mom_data(i).Mz_Nm/(q*b_span);
+    Aero_Coef_data(i).C_l           = Aero_Forc_Mom_data(i).Mx_Nm/(q*S_w*b_span);
+    Aero_Coef_data(i).C_m           = Aero_Forc_Mom_data(i).My_Nm/(q*S_w*CMA);
+    Aero_Coef_data(i).C_n           = Aero_Forc_Mom_data(i).Mz_Nm/(q*S_w*b_span);
     
-    Aero_Coef_data(i).C_L           = Aero_Forc_Mom_data(i).L_N/q;
-    Aero_Coef_data(i).C_D           = Aero_Forc_Mom_data(i).D_N/q;
+    Aero_Coef_data(i).C_L           = Aero_Forc_Mom_data(i).L_N/(q*S_w);
+    Aero_Coef_data(i).C_D           = Aero_Forc_Mom_data(i).D_N/(q*S_w);
     
 end
 
@@ -133,6 +133,9 @@ end
 %% 7. Crear lookup tables y aerocoef
 DBX_aero_V2
 
-%% 8. Cambuiar criterio de signos
+%% 8. Cambiar  criterio de signos
 % Del criterio tradicional (de La ETSIA) 
 %  al definido en Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Modelo aerodinamico V2.docx
+
+
+% TODO

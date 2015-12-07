@@ -2,7 +2,7 @@
 
 function fields = get_xflowfile_fields(filename)
 
-% % %     filename    = 'dbx_v1_s50_r16_a0_b0_da0_de0_dr5.txt'
+%     filename    = 'dbx_v1_s50_r16_a0_b0_dam2_de0_dr50.txt'
     size_str = size(filename,2);
     dim_counter = 1;
     for i = 1:size_str

@@ -1,3 +1,4 @@
+close all
 %% De acuerdo al modelo aerodinamico definido en 
 % Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Modelo aerodinamico V2.docx
 %% Import the data
@@ -57,7 +58,7 @@ surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_u
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_X')
-title(['\delta_{elev} = ',num2str(0),'deg'])
+title('C_X vs beta vs alfa')
 
 % return
 % pause
@@ -67,8 +68,8 @@ figure
 hold on
 grid
 xlabel('Alpha')
-ylabel('C_X_delta_e')
-title('C_X_{delta}_{ele} vs, alfa vs. delta_elev')
+ylabel('C_X_{\delta}_e')
+title('C_X_{\delta}_{ele} vs, alfa vs. \delta_{elev}')
 
 for j=1:size(delta_elev_unique,1)
     for i=1:size(Alpha_unique,1)
@@ -78,13 +79,13 @@ for j=1:size(delta_elev_unique,1)
             DBX_aero.C_X_delta_elev(i,j) = C_x(idx) - C_x(idx_zero);  % Este coeficiente es un Delta_coef
         end
     end
-    legend_str{j} = ['delta_e ', num2str(delta_elev_unique(j))];
+    legend_str{j} = ['\delta_e ', num2str(delta_elev_unique(j))];
     plot(Alpha_unique,DBX_aero.C_X_delta_elev(:,j))
 end
 legend(legend_str)
 % return
 %% Generar C_Y(alpha,beta)
-close all
+% close all
 DBX_aero.C_Y = NaN*ones(size(Alpha_unique,1),size(Beta_unique,1) );
 for j=1:size(Beta_unique,1)
     for i=1:size(Alpha_unique,1)
@@ -101,14 +102,15 @@ surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_u
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_Y')
+title('C_Y vs beta vs alfa')
 
 %% Generar C_Y_delta_rud
 C_Y_delta_rud = NaN*ones(size(delta_rud_unique,1),1 );
 figure
 hold on
-xlabel('delta_rud_unique')
-ylabel('C_Y_delta_rud')
-title('C_Y_{delta}_{rud} vs delta_rud_unique')
+xlabel('\delta_{rud}')
+ylabel('C_Y_{\delta}_{rud}')
+title('C_Y_{delta}_{rud} vs \delta_{rud}')
 
 for j=1:size(delta_rud_unique,1)
     idx = logical(  (delta_ale==0).*(delta_rud==delta_rud_unique(j)).*(delta_elev==0).*(Alfa==0).*(Beta==0) );
@@ -126,7 +128,7 @@ DBX_aero.C_Y_delta_rud = C_y(idx)/deg2rad(delta_rud(idx));
 % return
 % pause
 %% Generar C_Z(alpha,beta)
-close all
+% close all
 DBX_aero.C_Z = NaN*ones(size(Alpha_unique,1),size(Beta_unique,1) );
 for j=1:size(Beta_unique,1)
     for i=1:size(Alpha_unique,1)
@@ -146,19 +148,18 @@ surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_u
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_Z')
-title(['\delta_{elev} = ',num2str(0),'deg'])
+title('C_Z vs beta vs alfa')
 
 % return
-pause
+% pause
 %% Generar C_Z_delta_elev(alpha,delta_elev)
 DBX_aero.C_Z_delta_elev = NaN*ones(size(Alpha_unique,1),size(delta_elev_unique,1) );
 figure
 hold on
 grid
 xlabel('Alpha')
-ylabel('C_Z_delta_e')
-title('C_Z_delta_e vs, alfa vs. delta_elev')
-
+ylabel('C_Z_{\delta}_e')
+title('C_Z_{\delta}_e vs, alfa vs. \delta_{elev}')
 for j=1:size(delta_elev_unique,1)
     for i=1:size(Alpha_unique,1)
         idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==delta_elev_unique(j)).*(Alfa==Alpha_unique(i)).*(Beta==0) );
@@ -167,15 +168,15 @@ for j=1:size(delta_elev_unique,1)
             DBX_aero.C_Z_delta_elev(i,j) = C_z(idx) - C_z(idx_zero);  % Este coeficiente es un Delta_coef
         end
     end
-    legend_str{j} = ['delta_e ', num2str(delta_elev_unique(j))];
+    legend_str{j} = ['\delta_e ', num2str(delta_elev_unique(j))];
     plot(Alpha_unique,DBX_aero.C_Z_delta_elev(:,j))
 end
 legend(legend_str)
-return
+% return
 
 
 %% Generar C_L(alpha,beta)
-close all
+% close all
 DBX_aero.C_L = NaN*ones(size(Alpha_unique,1),size(Beta_unique,1) );
 for j=1:size(Beta_unique,1)
     for i=1:size(Alpha_unique,1)
@@ -195,18 +196,18 @@ surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_u
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_L')
-title(['\delta_{elev} = ',num2str(0),'deg'])
+title('C_L vs beta vs alfa')
 
 % return
-pause
+% pause
 %% Generar C_L_delta_elev(alpha,delta_elev)
 DBX_aero.C_L_delta_elev = NaN*ones(size(Alpha_unique,1),size(delta_elev_unique,1) );
 figure
 hold on
 grid
 xlabel('Alpha')
-ylabel('C_L_{delta}_e')
-title('C_L_{delta}_{ele} vs, alfa vs. delta_{elev}')
+ylabel('C_L_{\delta}_e')
+title('C_L_{\delta}_{ele} vs, alfa vs. \delta_{elev}')
 
 for j=1:size(delta_elev_unique,1)
     for i=1:size(Alpha_unique,1)
@@ -216,14 +217,14 @@ for j=1:size(delta_elev_unique,1)
             DBX_aero.C_L_delta_elev(i,j) = C_L(idx) - C_L(idx_zero);  % Este coeficiente es un Delta_coef
         end
     end
-    legend_str{j} = ['delta_e ', num2str(delta_elev_unique(j))];
+    legend_str{j} = ['\delta_e ', num2str(delta_elev_unique(j))];
     plot(Alpha_unique,DBX_aero.C_L_delta_elev(:,j))
 end
 legend(legend_str)
-return
+% return
 
 %% Generar C_D(alpha,beta)
-close all
+% close all
 DBX_aero.C_D = NaN*ones(size(Alpha_unique,1),size(Beta_unique,1) );
 for j=1:size(Beta_unique,1)
     for i=1:size(Alpha_unique,1)
@@ -243,18 +244,18 @@ surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_u
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_D')
-title(['\delta_{elev} = ',num2str(0),'deg'])
+title('C_D vs beta vs alfa')
 
 % return
-pause
+% pause
 %% Generar C_D_delta_elev(alpha,delta_elev)
 DBX_aero.C_D_delta_elev = NaN*ones(size(Alpha_unique,1),size(delta_elev_unique,1) );
 figure
 hold on
 grid
 xlabel('Alpha')
-ylabel('C_D_{delta}_e')
-title('C_D_{delta}_{ele} vs, alfa vs. delta_{elev}')
+ylabel('C_D_{\delta}_e')
+title('C_D_{\delta}_{ele} vs, alfa vs. \delta_{elev}')
 
 for j=1:size(delta_elev_unique,1)
     for i=1:size(Alpha_unique,1)
@@ -264,15 +265,15 @@ for j=1:size(delta_elev_unique,1)
             DBX_aero.C_D_delta_elev(i,j) = C_D(idx) - C_D(idx_zero);  % Este coeficiente es un Delta_coef
         end
     end
-    legend_str{j} = ['delta_e ', num2str(delta_elev_unique(j))];
+    legend_str{j} = ['\delta_e ', num2str(delta_elev_unique(j))];
     plot(Alpha_unique,DBX_aero.C_D_delta_elev(:,j))
 end
 legend(legend_str)
-return
+% return
 
 %% Generar C_l(alpha,beta)
-close all
-DBX_aero.Cl = NaN*ones(size(Alpha_unique,1),size(Beta_unique,1) );
+% close all
+DBX_aero.C_l = NaN*ones(size(Alpha_unique,1),size(Beta_unique,1) );
 for j=1:size(Beta_unique,1)
     for i=1:size(Alpha_unique,1)
         idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==Alpha_unique(i)).*(Beta==Beta_unique(j)) );
@@ -290,15 +291,15 @@ surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_u
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_l')
-title(['\delta_{elev} = ',num2str(0),'deg'])
+title('C_l vs beta vs alfa')
 
 %% Generar C_l_delta_rud
 C_l_delta_rud = NaN*ones(size(delta_rud_unique,1),1 );
 figure
 hold on
-xlabel('delta_rud_unique')
-ylabel('C_l_delta_rud')
-title('C_l_{delta}_{rud} vs delta_rud_unique')
+xlabel('delta_rud')
+ylabel('C_l_{\delta}_{rud}')
+title('C_l_{\delta}_{rud} vs \delta_{rud}')
 
 for j=1:size(delta_rud_unique,1)
     idx = logical(  (delta_ale==0).*(delta_rud==delta_rud_unique(j)).*(delta_elev==0).*(Alfa==0).*(Beta==0) );
@@ -317,9 +318,9 @@ DBX_aero.C_l_delta_rud = C_l_raw(idx)/deg2rad(delta_rud(idx));
 C_l_delta_rud = NaN*ones(size(delta_ale_unique,1),1 );
 figure
 hold on
-xlabel('delta_ale_unique')
-ylabel('C_l_delta_ale')
-title('C_l_{delta}_{ale} vs delta_ale_unique')
+xlabel('\delta_{ale}')
+ylabel('C_l_{\delta}_{ale}')
+title('C_l_{\delta}_{ale} vs \delta_{ale}')
 
 for j=1:size(delta_ale_unique,1)
     idx = logical(  (delta_ale==delta_ale_unique(j)).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==0) );
@@ -329,11 +330,11 @@ for j=1:size(delta_ale_unique,1)
 end
 plot(delta_ale_unique,C_l_delta_ale)
 
-idx = logical(  (delta_ale_unique==5) ); % Escoger un caso
-DBX_aero.C_l_delta_ale = C_l_raw(idx)/deg2rad(delta_ale_unique(idx)); 
+idx = logical(  (delta_ale==5) ); % Escoger un caso
+DBX_aero.C_l_delta_ale = C_l_raw(idx)./deg2rad(delta_ale(idx)); 
 
 %% Generar C_m(alpha,Beta)
-close all
+% close all
 DBX_aero.C_m = NaN*ones(size(Alpha_unique,1),size(Beta_unique,1) );
 for j=1:size(Beta_unique,1)
     for i=1:size(Alpha_unique,1)
@@ -345,7 +346,6 @@ for j=1:size(Beta_unique,1)
         try
             DBX_aero.C_m(i,j) = C_m_raw(idx);      
         end
-        
     end
 end
 figure
@@ -353,7 +353,7 @@ surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_u
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_m')
-title(['\delta_{elev} = ',num2str(0),'deg'])
+title('C_m vs beta vs alfa')
 
 % return
 % pause
@@ -363,8 +363,8 @@ figure
 hold on
 grid
 xlabel('Alpha')
-ylabel('C_m_{delta}_e')
-title('C_m_{delta}_{ele} vs, alfa vs. delta_{elev}')
+ylabel('C_m_{\delta}_e')
+title('C_m_{\delta}_{ele} vs, alfa vs. \delta_{elev}')
 
 for j=1:size(delta_elev_unique,1)
     for i=1:size(Alpha_unique,1)
@@ -374,56 +374,96 @@ for j=1:size(delta_elev_unique,1)
             DBX_aero.C_m_delta_elev(i,j) = C_m_raw(idx) - C_m_raw(idx_zero);  % Este coeficiente es un Delta_coef
         end
     end
-    legend_str{j} = ['delta_e ', num2str(delta_elev_unique(j))];
+    legend_str{j} = ['\delta_e ', num2str(delta_elev_unique(j))];
     plot(Alpha_unique,DBX_aero.C_m_delta_elev(:,j))
 end
 legend(legend_str)
-return
-
-% C_m_delta_ele efectivo
+% return
+% pause
+%% C_m_delta_ele efectivo
+clear C_m_delta_ele_MAT
+figure
 surf(repmat(Alpha_unique,1,size(delta_elev_unique,1)),repmat(delta_elev_unique',size(Alpha_unique,1),1),DBX_aero.C_m_delta_elev(:,:))
-for j=1:size(delta_elev_unique,1)
+xlabel('Alpha')
+ylabel('\delta_{ele}')
+zlabel('C_m_{\delta}_{elev}')
+title('C_m_{\delta}_{elev} vs \delta_{ele} vs alfa')
+
+for j=2:size(delta_elev_unique,1)-1
     for i=1:size(Alpha_unique,1)
-        C_m_delta_ele_MAT(i,j) = DBX_aero.C_m_delta_elev(i,j)./delta_elev_unique(j);
-        if isnan(C_m_delta_ele_MAT(i,j))
-            C_m_delta_ele_MAT(i,j) = [];
-        end
-    end
-end
-surf(repmat(Alpha_unique,1,size(delta_elev_unique,1)),repmat(delta_elev_unique',size(Alpha_unique,1),1),C_m_delta_ele_MAT(:,:))
-
-C_m_delta_rv_sim = mean(isnan(C_m_delta_ele_MAT(:,2:end-1)));
-
-pause
-
-%% Generar C_n(alpha,beta,deltas=0)
-close all
-C_n = NaN*ones(size(Alpha_unique,1),size(Beta_unique,1) );
-
-for j=1:size(Beta_unique,1)
-    for k=1:size(Alpha_unique,1)
-        idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==Alpha_unique(k)).*(Beta==Beta_unique(j)) );
-%         if sum(C_n_raw(idx))
-            C_n(k,j) = C_n_raw(idx);
+%         if ~isnan(DBX_aero.C_m_delta_elev(i,j))
+            C_m_delta_ele_MAT(i,j-1) = DBX_aero.C_m_delta_elev(i,j)./deg2rad( delta_elev_unique(j) );
 %         end
     end
 end
+% surf(repmat(Alpha_unique,1,size(delta_elev_unique,1)),repmat(delta_elev_unique',size(Alpha_unique,1),1),C_m_delta_ele_MAT(:,:))
+
+C_m_delta_ele_MAT_clean = C_m_delta_ele_MAT( ~isnan(C_m_delta_ele_MAT) );
+C_m_delta_rv_sim = mean(C_m_delta_ele_MAT_clean);
+
+% pause
+
+%% Generar C_n(alpha,beta)
+% close all
+DBX_aero.C_n = NaN*ones(size(Alpha_unique,1),size(Beta_unique,1) );
+for j=1:size(Beta_unique,1)
+    for i=1:size(Alpha_unique,1)
+        idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==Alpha_unique(i)).*(Beta==Beta_unique(j)) );
+        % Filtrar el caso de Beta=90deg
+        if (90==Beta_unique(j))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==90) );
+        end
+        try
+            DBX_aero.C_n(i,j) = C_n_raw(idx);      
+        end
+    end
+end
 figure
-surf(repmat(Alpha_unique,1,3),repmat(Beta_unique',6,1),C_n(:,:))
+surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_n(:,:))
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_n')
-% C_n_delta_rv_Asim
-idx = logical(  (delta_rud==delta_rud_unique(2)) );
-C_n_delta_rv_Asim = C_n_raw(idx)/deg2rad(delta_rud(idx));
+title('C_n vs beta vs alfa')
 
-% C_l_delta_a_Asim
-idx = logical(  (delta_ale==delta_ale_unique(2)) );
+%% Generar C_n_delta_rud
+C_n_delta_rud = NaN*ones(size(delta_rud_unique,1),1 );
+figure
+hold on
+xlabel('delta_{rud}')
+ylabel('C_n_{\delta}_{rud}')
+title('C_n_{\delta}_{rud} vs \delta_{rud}')
 
-C_n_delta_a_Asim = C_n_raw(idx)/deg2rad(delta_ale(idx));
+for j=1:size(delta_rud_unique,1)
+    idx = logical(  (delta_ale==0).*(delta_rud==delta_rud_unique(j)).*(delta_elev==0).*(Alfa==0).*(Beta==0) );
+    try
+        C_n_delta_rud(j) = C_n_raw(idx);  
+    end
+    
+end
+plot(delta_rud_unique,C_n_delta_rud)
 
+% Cojer SOLO el caso de 5deg. El caso de 10deg ESTA MAL % FIXME %
+idx = logical(  (delta_rud==-5) );
+DBX_aero.C_n_delta_rud = C_n_raw(idx)/deg2rad(delta_rud(idx)); 
 
-pause
+%% Generar C_n_delta_ale
+C_n_delta_rud = NaN*ones(size(delta_ale_unique,1),1 );
+figure
+hold on
+xlabel('\delta_{ale}')
+ylabel('C_n_{\delta}_{ale}')
+title('C_n_{\delta}_{ale} vs \delta_{ale}')
+
+for j=1:size(delta_ale_unique,1)
+    idx = logical(  (delta_ale==delta_ale_unique(j)).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==0) );
+    try
+        C_n_delta_ale(j) = C_n_raw(idx);  
+    end
+end
+plot(delta_ale_unique,C_n_delta_ale)
+
+idx = logical(  (delta_ale==10) ); % Escoger un caso
+DBX_aero.C_n_delta_ale = C_n_raw(idx)./deg2rad(delta_ale(idx)); 
 
 %% Pasar las deflexones a rads!
 delta_elev_unique_rad   = deg2rad(delta_elev_unique);
@@ -434,7 +474,7 @@ delta_ale_unique_rad    = deg2rad(delta_ale_unique);
 
 
 %% Definir los coeficientes de amortiguamiento
-
+% TODO
 Importar_coef_amortiguacion
 
 % C_Lift_q
