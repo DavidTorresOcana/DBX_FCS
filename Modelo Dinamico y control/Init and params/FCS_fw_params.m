@@ -24,12 +24,10 @@ Kp_p = 0.01;
 Ki_p = 0;
 
 %% Mixing de canales
-
 %        delta_RV_A          delta_RV_S         delta_a_A
 % C_l  C_l_delta_rv_Asim          0         C_l_delta_a_Asim
 % C_m       0              C_m_delta_rv_sim         0
 % C_n  C_n_delta_rv_Asim          0         C_n_delta_a_Asim   
-
 
 
 B = [ C_l_delta_rv_Asim          0         C_l_delta_a_Asim;

@@ -127,4 +127,6 @@ A_z_max = Max_Thrust*3/m;
 A_l_max_x = sqrt( (Max_Thrust*2/m)^2  -  (g*2/3)^2  );
 
 
+%% Open the dear Harness
 
+open DBX_control_harness.slx

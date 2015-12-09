@@ -91,7 +91,14 @@ for i = 1:size(xflow_data,2)
     Aero_Forc_Mom_data(i).D_N           = - Forces_F_w(1);
     
 end
+%% 4.5 Calculo de Centros Aerodinamicos: Temporal aqui
+for i = 1:size(xflow_data,2)
 
+    Moments = [xflow_data(i).Mx_Nm;xflow_data(i).My_Nm;xflow_data(i).Mz_Nm] + ...
+        cross(r_morro, [xflow_data(i).Fx_N;xflow_data(i).Fy_N;xflow_data(i).Fz_N])';
+    
+    
+end
 %% 5. Adimesionalizacion
 rho_ref     = 1.225; % Asegurarse que este es la densidad usada en XFlow!!
 S_w         = 0.75; % m^2

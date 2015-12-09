@@ -57,7 +57,6 @@ for i = 10:size(raw_data,1)
         vector_M_xflow(j,1) = raw_data(i,7+j);
         
     end
-    
     % Paso a ejes cuerpo habituales con axis_matrix
     kk_fuerzas = (axis_matrix * vector_F_xflow);
     kk_momentos = (axis_matrix * vector_M_xflow);

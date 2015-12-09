@@ -24,8 +24,8 @@ data = reshape([raw{:}],size(raw));
 DatosAeroDBXv2S2 = table;
 
 %% Allocate imported array to column variable names
-DatosAeroDBXv2S2.ReferenciaMITAIRCRAFTSTABILITY = cellVectors(:,1);
-DatosAeroDBXv2S2.claue = data(:,1);
+DatosAeroDBXv2S2.Coefficients_damping = cellVectors(:,1);
+DatosAeroDBXv2S2.value = data(:,1);
 
 %% Clear temporary variables
 clearvars data raw raw0_0 raw0_1 cellVectors;

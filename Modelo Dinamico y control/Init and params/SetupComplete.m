@@ -26,12 +26,12 @@ I_BAC= I_CG + m*[CG(3)^2,0,CG(1)*CG(3);0,CG(1)^2+CG(3)^2,0;CG(1)*CG(3),0,CG(1)^2
 
 %% Arms distances   
 %     1           2
-%-----|-----------|-------
-%     |     o     |
-%     |     |     |
-%     |     |     |
-%     |     3     |
-%     |-----------|
+%------|-----------|--------
+%      |     o     |
+%      |     |     |
+%      |     |     |
+%      |     3     |
+%      |-----------|
 
 Rotation_sign = [-1,-1,-1]; % [Anticlockwise,Anticlockwise,Anticlockwise]   % To be changed/measured/tuned
 L_M = 1.20;
@@ -95,6 +95,17 @@ S_w = 0.75;
 as = aerosonde_data_mod;
 % Luis aero Model
 DBX_aero_V1;
+
+% Modelo Aerodinamico CFD V2(Luis-David): Se supone es muy muy preciso
+%  De acuerdo al modelo aerodinamico definido en 
+%       Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Modelo aerodinamico V2.docx
+currr_path =pwd;
+cd .. 
+cd('Modelo CFD DroneBoX')
+auto_xflow;
+pause
+close all
+cd(currr_path)
 %% General parameters of the vehicle
 rho=1.225; % Density at this position % To be changed/measured/tuned
 g=9.81;
