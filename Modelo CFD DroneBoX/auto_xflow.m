@@ -122,7 +122,6 @@ for i = 1:size(xflow_data,2)
     
 end
 
-
 %% 6. Guardar en un Excel para psost procesado
 fprintf('\n\n Generating Excel data file')
 
@@ -133,10 +132,20 @@ if input(' \n Deseas post-procesar los datos?\n Si (1) \n No (2)\n ') ==1
     return
 end
     
-
 %% 7. Crear lookup tables y aerocoef
 fprintf('\n\n Creating Aero model tables')
 
 DBX_aero_V2
 
+fprintf(' \n \n Pulse una tecla para continuar...')
+pause
 % open DBX_aero
+
+%% 8. Ajuste no-lienal parametrico del modelo aero:
+% Para autopiloto y simulaciones ligeras
+% Si se usa este modelo como modelo aero, usar CLIP para valores fuera de
+% rango!
+fprintf('\n\n  Nonlinear parametric Aero model')
+
+Nonlinear_param_aeromodel;
+

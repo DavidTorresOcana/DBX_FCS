@@ -567,7 +567,7 @@ DBX_aero.delta_rud_rad    = deg2rad(delta_rud_unique);
 DBX_aero.delta_ale_rad    = deg2rad(delta_ale_unique);
 
 %% Definir los coeficientes de amortiguamiento
-% TODO
+
 Importar_coef_amortiguacion
 
 for i=1:size(DatosAeroDBXv2S2.Coefficients_damping ,1)
