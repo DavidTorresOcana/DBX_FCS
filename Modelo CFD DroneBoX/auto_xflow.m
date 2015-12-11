@@ -1,8 +1,9 @@
 % Script de automatización de proceso de extracción
 % clear all
 close all
-clc
+% clc
 
+fprintf('\n\n Loading CFD files')
 %% 1. Obtención de lista de ficheros en carpeta /data
 
 addpath(pwd);
@@ -20,8 +21,8 @@ for i = 1:size_dir_list
     cd (dir_list{i})
     file_list_struct = get_xflow_files;
     
-    % Bruteforce para casos con simetría
-    axis_matrix = [[-1 0 0];[0 1 0];[0 0 -1]]; % Matriz cambio de base
+    axis_matrix = [[-1 0 0];[0 1 0];[0 0 -1]]; % Matriz cambio de base. 
+                 % De acuerod a la configuracion del vehiculo en XFlow
         % Detectar la simetria del paqute
         idx = strcmp( dir_list{i},{Tabla_CFD{:,1}});
         if strcmp( 'SI',Tabla_CFD{idx,2})
@@ -122,10 +123,9 @@ for i = 1:size(xflow_data,2)
 end
 
 
-
-
-
 %% 6. Guardar en un Excel para psost procesado
+fprintf('\n\n Generating Excel data file')
+
 writetable( struct2table(Aero_Coef_data) ,'Datos Aero DBX v2.xlsx','Sheet','Raw Data')
 
 if input(' \n Deseas post-procesar los datos?\n Si (1) \n No (2)\n ') ==1
@@ -135,4 +135,8 @@ end
     
 
 %% 7. Crear lookup tables y aerocoef
+fprintf('\n\n Creating Aero model tables')
+
 DBX_aero_V2
+
+% open DBX_aero

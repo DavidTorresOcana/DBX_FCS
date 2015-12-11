@@ -40,6 +40,14 @@ for j=1:size(Beta_unique,1)
         if (90==Beta_unique(j))
             idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==90) );
         end
+        % Filtrar el caso de alpha=90deg
+        if (90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==90).*(Beta==0) );
+        end
+        % Filtrar el caso de alpha=-90deg
+        if (-90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==-90).*(Beta==0) );
+        end
         try
             DBX_aero.C_X(i,j) = C_x(idx);
         catch
@@ -77,6 +85,8 @@ for j=1:size(delta_elev_unique,1)
         idx_zero = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==Alpha_unique(i)).*(Beta==0) );
         try
             DBX_aero.C_X_delta_elev(i,j) = C_x(idx) - C_x(idx_zero);  % Este coeficiente es un Delta_coef
+        catch
+            DBX_aero.C_X_delta_elev(i,j) = 0;
         end
     end
     legend_str{j} = ['\delta_e ', num2str(delta_elev_unique(j))];
@@ -93,6 +103,14 @@ for j=1:size(Beta_unique,1)
         % Filtrar el caso de Beta=90deg
         if (90==Beta_unique(j))
             idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==90) );
+        end
+        % Filtrar el caso de alpha=90deg
+        if (90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==90).*(Beta==0) );
+        end
+        % Filtrar el caso de alpha=-90deg
+        if (-90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==-90).*(Beta==0) );
         end
         try
             DBX_aero.C_Y(i,j) = C_y(idx);
@@ -117,7 +135,9 @@ title('C_Y_{delta}_{rud} vs \delta_{rud}')
 for j=1:size(delta_rud_unique,1)
     idx = logical(  (delta_ale==0).*(delta_rud==delta_rud_unique(j)).*(delta_elev==0).*(Alfa==0).*(Beta==0) );
     try
-        C_Y_delta_rud(j) = C_y(idx);  
+        C_Y_delta_rud(j) = C_y(idx);
+    catch
+        C_Y_delta_rud(j) = 0;
     end
     
 end
@@ -141,6 +161,14 @@ for j=1:size(Beta_unique,1)
         % Filtrar el caso de Beta=90deg
         if (90==Beta_unique(j))
             idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==90) );
+        end
+        % Filtrar el caso de alpha=90deg
+        if (90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==90).*(Beta==0) );
+        end
+        % Filtrar el caso de alpha=-90deg
+        if (-90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==-90).*(Beta==0) );
         end
         try
             DBX_aero.C_Z(i,j) = C_z(idx);      
@@ -171,6 +199,8 @@ for j=1:size(delta_elev_unique,1)
         idx_zero = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==Alpha_unique(i)).*(Beta==0) );
         try
             DBX_aero.C_Z_delta_elev(i,j) = C_z(idx) - C_z(idx_zero);  % Este coeficiente es un Delta_coef
+        catch
+            DBX_aero.C_Z_delta_elev(i,j) = 0;
         end
     end
     legend_str{j} = ['\delta_e ', num2str(delta_elev_unique(j))];
@@ -189,6 +219,14 @@ for j=1:size(Beta_unique,1)
         % Filtrar el caso de Beta=90deg
         if (90==Beta_unique(j))
             idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==90) );
+        end
+        % Filtrar el caso de alpha=90deg
+        if (90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==90).*(Beta==0) );
+        end
+        % Filtrar el caso de alpha=-90deg
+        if (-90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==-90).*(Beta==0) );
         end
         try
             DBX_aero.C_L(i,j) = C_L(idx);      
@@ -220,6 +258,8 @@ for j=1:size(delta_elev_unique,1)
         idx_zero = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==Alpha_unique(i)).*(Beta==0) );
         try
             DBX_aero.C_L_delta_elev(i,j) = C_L(idx) - C_L(idx_zero);  % Este coeficiente es un Delta_coef
+        catch
+            DBX_aero.C_L_delta_elev(i,j) = 0;
         end
     end
     legend_str{j} = ['\delta_e ', num2str(delta_elev_unique(j))];
@@ -237,6 +277,14 @@ for j=1:size(Beta_unique,1)
         % Filtrar el caso de Beta=90deg
         if (90==Beta_unique(j))
             idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==90) );
+        end
+        % Filtrar el caso de alpha=90deg
+        if (90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==90).*(Beta==0) );
+        end
+        % Filtrar el caso de alpha=-90deg
+        if (-90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==-90).*(Beta==0) );
         end
         try
             DBX_aero.C_D(i,j) = C_D(idx);      
@@ -268,6 +316,8 @@ for j=1:size(delta_elev_unique,1)
         idx_zero = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==Alpha_unique(i)).*(Beta==0) );
         try
             DBX_aero.C_D_delta_elev(i,j) = C_D(idx) - C_D(idx_zero);  % Este coeficiente es un Delta_coef
+        catch
+             DBX_aero.C_D_delta_elev(i,j) = 0;
         end
     end
     legend_str{j} = ['\delta_e ', num2str(delta_elev_unique(j))];
@@ -285,6 +335,14 @@ for j=1:size(Beta_unique,1)
         % Filtrar el caso de Beta=90deg
         if (90==Beta_unique(j))
             idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==90) );
+        end
+        % Filtrar el caso de alpha=90deg
+        if (90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==90).*(Beta==0) );
+        end
+        % Filtrar el caso de alpha=-90deg
+        if (-90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==-90).*(Beta==0) );
         end
         try
             DBX_aero.C_l(i,j) = C_l_raw(idx);      
@@ -305,7 +363,6 @@ hold on
 xlabel('delta_rud')
 ylabel('C_l_{\delta}_{rud}')
 title('C_l_{\delta}_{rud} vs \delta_{rud}')
-
 for j=1:size(delta_rud_unique,1)
     idx = logical(  (delta_ale==0).*(delta_rud==delta_rud_unique(j)).*(delta_elev==0).*(Alfa==0).*(Beta==0) );
     try
@@ -355,6 +412,14 @@ for j=1:size(Beta_unique,1)
         if (90==Beta_unique(j))
             idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==90) );
         end
+        % Filtrar el caso de alpha=90deg
+        if (90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==90).*(Beta==0) );
+        end
+        % Filtrar el caso de alpha=-90deg
+        if (-90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==-90).*(Beta==0) );
+        end
         try
             DBX_aero.C_m(i,j) = C_m_raw(idx);      
         end
@@ -384,6 +449,8 @@ for j=1:size(delta_elev_unique,1)
         idx_zero = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==Alpha_unique(i)).*(Beta==0) );
         try
             DBX_aero.C_m_delta_elev(i,j) = C_m_raw(idx) - C_m_raw(idx_zero);  % Este coeficiente es un Delta_coef
+        catch
+            DBX_aero.C_m_delta_elev(i,j) = 0;
         end
     end
     legend_str{j} = ['\delta_e ', num2str(delta_elev_unique(j))];
@@ -423,6 +490,14 @@ for j=1:size(Beta_unique,1)
         % Filtrar el caso de Beta=90deg
         if (90==Beta_unique(j))
             idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==0).*(Beta==90) );
+        end
+        % Filtrar el caso de alpha=90deg
+        if (90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==90).*(Beta==0) );
+        end
+        % Filtrar el caso de alpha=-90deg
+        if (-90==Alpha_unique(i))
+            idx = logical(  (delta_ale==0).*(delta_rud==0).*(delta_elev==0).*(Alfa==-90).*(Beta==0) );
         end
         try
             DBX_aero.C_n(i,j) = C_n_raw(idx);      
@@ -531,11 +606,12 @@ for i=1:size(DatosAeroDBXv2S2.Coefficients_damping ,1)
 end
 
 %% Extra: Calculo de Centros Aerodinamicos
+clear  legend_str
 DBX_aero.x_CA = NaN*ones(size(Alpha_unique,1),size(Beta_unique,1) );
 figure
 hold on
 for j=1:3
-    for i = 3:size(DBX_aero.C_L(:,j),1)-3
+    for i = 4:size(DBX_aero.C_L(:,j),1)-4
         C_m_alpha = (DBX_aero.C_m(i,j)-DBX_aero.C_m(i-1,j))/(DBX_aero.alpha_rad(i)-DBX_aero.alpha_rad(i-1));
         C_L_alpha = (DBX_aero.C_L(i,j)-DBX_aero.C_L(i-1,j))/(DBX_aero.alpha_rad(i)-DBX_aero.alpha_rad(i-1));
         DBX_aero.x_CA(i,j) = CMA*C_m_alpha/C_L_alpha;

@@ -30,7 +30,6 @@ function xflow_data = get_xflow_data(filename,axis_matrix,sim_flag,time_proc)
 % % sim_flag = 1; %  Caso completo [0] Simetría habilitada [1]
 % % time_proc = 0.4; % Tiempo ejemplo para filtrado
 
-addpath data
 
 %% 1. Información general del archivo
 xflow_data          = get_xflowfile_fields(filename);
