@@ -33,9 +33,9 @@ DBX_aero_param.C_X.x_lim    = [max(DBX_aero_param.C_X.x),min(DBX_aero_param.C_X.
 DBX_aero_param.C_X.y_lim    = [max(DBX_aero_param.C_X.y),min(DBX_aero_param.C_X.y)];
 DBX_aero_param.C_X.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_X);
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_X.x ,DBX_aero_param.C_X.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_X.x ,DBX_aero_param.C_X.y ,...]
      DBX_aero_param.C_X.z,DBX_aero_param.C_X.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_X.z_name,'=vs. ',DBX_aero_param.C_X.x_name,' ',DBX_aero_param.C_X.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_X.z_name,'=vs. ',DBX_aero_param.C_X.x_name,' ',DBX_aero_param.C_X.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_X.x_name)
 ylabel(DBX_aero_param.C_X.y_name)
@@ -60,9 +60,9 @@ DBX_aero_param.C_X_delta_elev.x_lim    = [max(DBX_aero_param.C_X_delta_elev.x),m
 DBX_aero_param.C_X_delta_elev.y_lim    = [max(DBX_aero_param.C_X_delta_elev.y),min(DBX_aero_param.C_X_delta_elev.y)];
 DBX_aero_param.C_X_delta_elev.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_X_delta_elev);
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_X_delta_elev.x ,DBX_aero_param.C_X_delta_elev.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_X_delta_elev.x ,DBX_aero_param.C_X_delta_elev.y ,...]
      DBX_aero_param.C_X_delta_elev.z,DBX_aero_param.C_X_delta_elev.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_X.z_name,'=vs. ',DBX_aero_param.C_X.x_name,' ',DBX_aero_param.C_X.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_X.z_name,'=vs. ',DBX_aero_param.C_X.x_name,' ',DBX_aero_param.C_X.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_X_delta_elev.x_name)
 ylabel(DBX_aero_param.C_X_delta_elev.y_name)
@@ -86,9 +86,9 @@ DBX_aero_param.C_Y.x_lim    = [max(DBX_aero_param.C_Y.x),min(DBX_aero_param.C_Y.
 DBX_aero_param.C_Y.y_lim    = [max(DBX_aero_param.C_Y.y),min(DBX_aero_param.C_Y.y)];
 DBX_aero_param.C_Y.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_Y);
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_Y.x ,DBX_aero_param.C_Y.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_Y.x ,DBX_aero_param.C_Y.y ,...]
      DBX_aero_param.C_Y.z,DBX_aero_param.C_Y.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_Y.z_name,'= vs. ',DBX_aero_param.C_Y.x_name,' ',DBX_aero_param.C_Y.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_Y.z_name,'= vs. ',DBX_aero_param.C_Y.x_name,' ',DBX_aero_param.C_Y.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_Y.x_name)
 ylabel(DBX_aero_param.C_Y.y_name)
@@ -117,9 +117,9 @@ DBX_aero_param.C_Z.y_lim    = [max(DBX_aero_param.C_Z.y),min(DBX_aero_param.C_Z.
 DBX_aero_param.C_Z.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_Z);
 
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_Z.x ,DBX_aero_param.C_Z.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_Z.x ,DBX_aero_param.C_Z.y ,...]
      DBX_aero_param.C_Z.z,DBX_aero_param.C_Z.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_Z.z_name,'=vs. ',DBX_aero_param.C_Z.x_name,' ',DBX_aero_param.C_Z.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_Z.z_name,'=vs. ',DBX_aero_param.C_Z.x_name,' ',DBX_aero_param.C_Z.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_Z.x_name)
 ylabel(DBX_aero_param.C_Z.y_name)
@@ -144,9 +144,9 @@ DBX_aero_param.C_Z_delta_elev.x_lim    = [max(DBX_aero_param.C_Z_delta_elev.x),m
 DBX_aero_param.C_Z_delta_elev.y_lim    = [max(DBX_aero_param.C_Z_delta_elev.y),min(DBX_aero_param.C_Z_delta_elev.y)];
 DBX_aero_param.C_Z_delta_elev.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_Z_delta_elev);
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_Z_delta_elev.x ,DBX_aero_param.C_Z_delta_elev.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_Z_delta_elev.x ,DBX_aero_param.C_Z_delta_elev.y ,...]
      DBX_aero_param.C_Z_delta_elev.z,DBX_aero_param.C_Z_delta_elev.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_Z.z_name,'=vs. ',DBX_aero_param.C_Z.x_name,' ',DBX_aero_param.C_Z.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_Z.z_name,'=vs. ',DBX_aero_param.C_Z.x_name,' ',DBX_aero_param.C_Z.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_Z_delta_elev.x_name)
 ylabel(DBX_aero_param.C_Z_delta_elev.y_name)
@@ -171,9 +171,9 @@ DBX_aero_param.C_L.y_lim    = [max(DBX_aero_param.C_L.y),min(DBX_aero_param.C_L.
 DBX_aero_param.C_L.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_L);
 
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_L.x ,DBX_aero_param.C_L.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_L.x ,DBX_aero_param.C_L.y ,...]
      DBX_aero_param.C_L.z,DBX_aero_param.C_L.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_L.z_name,'=vs. ',DBX_aero_param.C_L.x_name,' ',DBX_aero_param.C_L.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_L.z_name,'=vs. ',DBX_aero_param.C_L.x_name,' ',DBX_aero_param.C_L.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_L.x_name)
 ylabel(DBX_aero_param.C_L.y_name)
@@ -198,9 +198,9 @@ DBX_aero_param.C_L_delta_elev.x_lim    = [max(DBX_aero_param.C_L_delta_elev.x),m
 DBX_aero_param.C_L_delta_elev.y_lim    = [max(DBX_aero_param.C_L_delta_elev.y),min(DBX_aero_param.C_L_delta_elev.y)];
 DBX_aero_param.C_L_delta_elev.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_L_delta_elev);
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_L_delta_elev.x ,DBX_aero_param.C_L_delta_elev.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_L_delta_elev.x ,DBX_aero_param.C_L_delta_elev.y ,...]
      DBX_aero_param.C_L_delta_elev.z,DBX_aero_param.C_L_delta_elev.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_L.z_name,'=vs. ',DBX_aero_param.C_L.x_name,' ',DBX_aero_param.C_L.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_L.z_name,'=vs. ',DBX_aero_param.C_L.x_name,' ',DBX_aero_param.C_L.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_L_delta_elev.x_name)
 ylabel(DBX_aero_param.C_L_delta_elev.y_name)
@@ -226,9 +226,9 @@ DBX_aero_param.C_D.y_lim    = [max(DBX_aero_param.C_D.y),min(DBX_aero_param.C_D.
 DBX_aero_param.C_D.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_D);
 
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_D.x ,DBX_aero_param.C_D.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_D.x ,DBX_aero_param.C_D.y ,...]
      DBX_aero_param.C_D.z,DBX_aero_param.C_D.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_D.z_name,'=vs. ',DBX_aero_param.C_D.x_name,' ',DBX_aero_param.C_D.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_D.z_name,'=vs. ',DBX_aero_param.C_D.x_name,' ',DBX_aero_param.C_D.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_D.x_name)
 ylabel(DBX_aero_param.C_D.y_name)
@@ -253,9 +253,9 @@ DBX_aero_param.C_D_delta_elev.x_lim    = [max(DBX_aero_param.C_D_delta_elev.x),m
 DBX_aero_param.C_D_delta_elev.y_lim    = [max(DBX_aero_param.C_D_delta_elev.y),min(DBX_aero_param.C_D_delta_elev.y)];
 DBX_aero_param.C_D_delta_elev.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_D_delta_elev);
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_D_delta_elev.x ,DBX_aero_param.C_D_delta_elev.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_D_delta_elev.x ,DBX_aero_param.C_D_delta_elev.y ,...]
      DBX_aero_param.C_D_delta_elev.z,DBX_aero_param.C_D_delta_elev.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_D.z_name,'=vs. ',DBX_aero_param.C_D.x_name,' ',DBX_aero_param.C_D.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_D.z_name,'=vs. ',DBX_aero_param.C_D.x_name,' ',DBX_aero_param.C_D.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_D_delta_elev.x_name)
 ylabel(DBX_aero_param.C_D_delta_elev.y_name)
@@ -280,9 +280,9 @@ DBX_aero_param.C_l.x_lim    = [max(DBX_aero_param.C_l.x),min(DBX_aero_param.C_l.
 DBX_aero_param.C_l.y_lim    = [max(DBX_aero_param.C_l.y),min(DBX_aero_param.C_l.y)];
 DBX_aero_param.C_l.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_l);
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_l.x ,DBX_aero_param.C_l.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_l.x ,DBX_aero_param.C_l.y ,...]
      DBX_aero_param.C_l.z,DBX_aero_param.C_l.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_l.z_name,'=vs. ',DBX_aero_param.C_l.x_name,' ',DBX_aero_param.C_l.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_l.z_name,'=vs. ',DBX_aero_param.C_l.x_name,' ',DBX_aero_param.C_l.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_l.x_name)
 ylabel(DBX_aero_param.C_l.y_name)
@@ -314,9 +314,9 @@ DBX_aero_param.C_m.y_lim    = [max(DBX_aero_param.C_m.y),min(DBX_aero_param.C_m.
 DBX_aero_param.C_m.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_m);
 
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_m.x ,DBX_aero_param.C_m.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_m.x ,DBX_aero_param.C_m.y ,...]
      DBX_aero_param.C_m.z,DBX_aero_param.C_m.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_m.z_name,'=vs. ',DBX_aero_param.C_m.x_name,' ',DBX_aero_param.C_m.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_m.z_name,'=vs. ',DBX_aero_param.C_m.x_name,' ',DBX_aero_param.C_m.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_m.x_name)
 ylabel(DBX_aero_param.C_m.y_name)
@@ -341,9 +341,9 @@ DBX_aero_param.C_m_delta_elev.x_lim    = [max(DBX_aero_param.C_m_delta_elev.x),m
 DBX_aero_param.C_m_delta_elev.y_lim    = [max(DBX_aero_param.C_m_delta_elev.y),min(DBX_aero_param.C_m_delta_elev.y)];
 DBX_aero_param.C_m_delta_elev.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_m_delta_elev);
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_m_delta_elev.x ,DBX_aero_param.C_m_delta_elev.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_m_delta_elev.x ,DBX_aero_param.C_m_delta_elev.y ,...]
      DBX_aero_param.C_m_delta_elev.z,DBX_aero_param.C_m_delta_elev.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_m_delta_elev.z_name,'=vs. ',DBX_aero_param.C_m_delta_elev.x_name,' ',DBX_aero_param.C_m_delta_elev.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_m_delta_elev.z_name,'=vs. ',DBX_aero_param.C_m_delta_elev.x_name,' ',DBX_aero_param.C_m_delta_elev.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_m_delta_elev.x_name)
 ylabel(DBX_aero_param.C_m_delta_elev.y_name)
@@ -377,9 +377,9 @@ DBX_aero_param.C_n.x_lim    = [max(DBX_aero_param.C_n.x),min(DBX_aero_param.C_n.
 DBX_aero_param.C_n.y_lim    = [max(DBX_aero_param.C_n.y),min(DBX_aero_param.C_n.y)];
 DBX_aero_param.C_n.Expre_regu   = Get_regular_fitting_expre(DBX_aero_param.C_n);
 
-[fitresult, gof,h]  = Custom_Fit(DBX_aero_param.C_n.x ,DBX_aero_param.C_n.y ,...]
+[fitresult, gof,hand]  = Custom_Fit(DBX_aero_param.C_n.x ,DBX_aero_param.C_n.y ,...]
      DBX_aero_param.C_n.z,DBX_aero_param.C_n.Expre_regu);
-legend( h, 'untitled fit 1', [DBX_aero_param.C_n.z_name,'=vs. ',DBX_aero_param.C_n.x_name,' ',DBX_aero_param.C_n.y_name], 'Location', 'NorthEast' );
+legend( hand, 'untitled fit 1', [DBX_aero_param.C_n.z_name,'=vs. ',DBX_aero_param.C_n.x_name,' ',DBX_aero_param.C_n.y_name], 'Location', 'NorthEast' );
 % Label axes
 xlabel(DBX_aero_param.C_n.x_name)
 ylabel(DBX_aero_param.C_n.y_name)
@@ -409,4 +409,21 @@ DBX_aero_param.C_l_r  =DBX_aero.C_l_r;
 DBX_aero_param.C_m_q  =DBX_aero.C_m_q;
 DBX_aero_param.C_n_p  =DBX_aero.C_n_p;
 DBX_aero_param.C_n_r  =DBX_aero.C_n_r;
+
+%% Extra: Calculo de Centros Aerodinamicos
+% x_CA = C_m_alpha/C_L_alpha*CMA
+% C_m_alpha(alpha,beta) = (a(2)+a(3)*alpha_rad+a(4)*alpha_rad^2+a(5)*alpha_rad^3)*(1-beta_rad^2);
+% C_L_alpha(alpha,beta) = (a(2)+a(3)*alpha_rad+a(4)*alpha_rad^2+a(5)*alpha_rad^3)*(1-beta_rad^2)
+
+for i=2:size(DBX_aero_param.C_L.x,1)-1
+    alpha_rad = DBX_aero_param.C_L.x(i);
+    x_CA(i) = (DBX_aero_param.C_m.a(2)+DBX_aero_param.C_m.a(3)*alpha_rad+DBX_aero_param.C_m.a(4)*alpha_rad^2+DBX_aero_param.C_m.a(5)*alpha_rad^3)/...
+        (DBX_aero_param.C_L.a(2)+DBX_aero_param.C_L.a(3)*alpha_rad+DBX_aero_param.C_L.a(4)*alpha_rad^2+DBX_aero_param.C_L.a(5)*alpha_rad^3)*CMA;
+end
+
+plot(DBX_aero_param.C_L.x(1:end-1),x_CA)
+xlabel('Alpha(rad)')
+ylabel('x_{CA} (m)')
+title('x_{CA} vs alfa')
+
 
