@@ -53,8 +53,8 @@ latitude    =  40.463650;
 longitude   = -3.554389;
 airport_alt = 587.5; % m
 
-% latitude=0.463650;
-% longitude=-0.554389;
+% latitude=50.0630793;
+% longitude=19.9338941;
 
 [~, ~, ~, rho] = atmosisa(airport_alt);
 %% 5. Initialize actuators

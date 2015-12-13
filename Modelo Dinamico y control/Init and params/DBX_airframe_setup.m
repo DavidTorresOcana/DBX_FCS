@@ -15,7 +15,7 @@ m_OE    = 14.5; % Con 2 baterias(2kg)
 CG_OE   = [0.052,0,0.053]'; % [0.052,0,0.053]'; % CG del vehiculo vacio sin PL
 
              CG_OE(1) = 0; %%%% Forzar el CG_x a 0 para pruebas VTOL
-             
+
 m_PL    = 0; % PL mass  % To be changed/measured/tuned
 CG_PL   = [0,0,0.18]'; % CG positions about BAC of vehicle without motors  % To be changed/measured/tuned
 
@@ -119,7 +119,7 @@ close all
 %% 6. Propeller/motor parameters
 % Go to ..\DroneBoX\Design\Props & Theo\APC thin electric 19x12 prop for finding the propeller data  and model fitting
 
-Tau_motors  = 0.1; % Time  constant of the ESC+Motors  % To be changed/measured/tuned
+Tau_motors  = 0.05; % Time  constant of the ESC+Motors  % To be changed/measured/tuned
 v_i0=sqrt( 1/3*m*g/(2*rho_0*pi*R^2)  ); % Induced velocity in hover
 
 % TEP normal
