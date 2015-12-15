@@ -1,8 +1,11 @@
 %% Sigmas de los sensores y salidas de los filtros
 
 GPS_pos_sig = 0.4; % m
+GPS_pos_retardo = 1;% segundos
 
 Speed_sigmas = 0.2;
+Speed_retardo = 1;% segundos
+
 omgea_b_sigmas = 0.002;
 
 quaternion_sigmas= 0.04;

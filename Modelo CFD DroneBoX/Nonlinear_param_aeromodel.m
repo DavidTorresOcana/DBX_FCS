@@ -427,3 +427,27 @@ ylabel('x_{CA} (m)')
 title('x_{CA} vs alfa')
 
 
+%% Extra: Deflexion elevator vs AoA
+clear DBX_aero_param.delta_elevator_trim
+figure
+hold on
+grid
+xlabel('Alpha (deg)')
+ylabel('{\delta}_e (deg)')
+title('{\delta}_{ele} vs, alfa vs. x_{CG}')
+
+x_CG = [2,4,6,8,10,12,14,16,18]/100;
+for j=1:size(x_CG,2)
+    for i=1:size(DBX_aero_param.C_L.x,1)-1
+        DBX_aero_param.delta_elevator_trim(i,j) = 1/DBX_aero.C_m_delta_elev_avrg*(  x_CG(j)/CMA*( DBX_aero_param.C_L.a(1)+DBX_aero_param.C_L.a(2)*DBX_aero_param.C_L.x(i) ) ...
+            - ( DBX_aero_param.C_L.a(1)+DBX_aero_param.C_m.a(2)*DBX_aero_param.C_m.x(i) )  );
+    end
+    legend_str{j} = ['x_{CG} ', num2str(100*x_CG(j)),' cm'];
+    plot(rad2deg( DBX_aero_param.C_L.x(1:end-1) ),rad2deg(DBX_aero_param.delta_elevator_trim(:,j)))
+    
+end
+
+legend(legend_str)
+
+
+
