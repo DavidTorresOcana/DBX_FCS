@@ -4,8 +4,8 @@
 % Punto B: Deflexion para el Servo en 1500us
 % Punto C: Minima deflexion
 
-% Nota (para servo de 180deg): Grados de servo = (us-1500)/400*90deg donde los us son los microsegundos  del PWM
-% NOTA II: Si algun rango de PWM es diferente de 1100-1900usecs: Cambiarlo en todos lso modelos!
+% Nota (para servo de 180deg): Grados de servo = (us-1500)/600*90deg donde los us son los microsegundos  del PWM
+% NOTA II: Si algun rango de PWM es diferente de 900-2100usecs: Cambiarlo en todos lso modelos!
 %% Introduccion datos de puntos
 % Servo 1: motor delantero izquierdo
 Servo_calib.Servo1.Punto_A.Servo_deg = -90; % Rotacion del servo para maxima deflexion permitida
