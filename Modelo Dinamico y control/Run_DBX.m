@@ -94,7 +94,7 @@ block_metadat = Simulink.MDLInfo('DBX_control_harness');
 fprintf('  %s  ¦   %s  \n',block_metadat.BlockDiagramName,block_metadat.ModelVersion)
 block_metadat = Simulink.MDLInfo('DBX_model_all');
 fprintf('  %s        ¦   %s  \n',block_metadat.BlockDiagramName,block_metadat.ModelVersion)
-block_metadat = Simulink.MDLInfo('dbx_control_v0_04');
+block_metadat = Simulink.MDLInfo('dbx_control_v0_05');
 fprintf('  %s    ¦   %s  \n',block_metadat.BlockDiagramName,block_metadat.ModelVersion)
 
 

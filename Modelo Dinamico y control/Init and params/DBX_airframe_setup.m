@@ -7,11 +7,11 @@
 k_quat  = 100;  % High gain Quaternion Normalization
 r_sens  = [0.0,0,0.0]' ; % Position of sensors
 
-rho_0   = 1.225; % Density at this position % To be changed/measured/tuned
+rho_0   = 1.156; % Density at this position % To be changed/measured/tuned
 g       = 9.81;  % Gravity constant
 
 %% 2. Mass properties, inertia moments
-m_OE    = 14.5; % Con 2 baterias(2kg)
+m_OE    = 13; % Con 2 baterias(2kg)
 CG_OE   = [0.052,0,0.053]'; % [0.052,0,0.053]'; % CG del vehiculo vacio sin PL
 
              CG_OE(1) = 0; %%%% Forzar el CG_x a 0 para pruebas VTOL
