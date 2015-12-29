@@ -32,8 +32,8 @@ Servos_calib;
 
 % Nivel de cuantitacion en PWM
 DBX_PWM.quant_interval      = 5; % Resolucion de la señal PWM
-DBX_PWM.Motors.Max_PWM      = 1900; % us
-DBX_PWM.Motors.Min_PWM      = 1100; % us
+DBX_PWM.Motors.Max_PWM      = 2100; % us
+DBX_PWM.Motors.Min_PWM      = 900; % us
 DBX_PWM.Motors.update_rate  = 50; % Hz
 
 DBX_PWM.Servos.Max_PWM      = 2100; % us
