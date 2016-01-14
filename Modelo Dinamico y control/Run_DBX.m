@@ -8,7 +8,7 @@ clc
 
 fprintf(' \n\n  Welcome to DBX modelling, simulation \n      and control design suite')
 
-addpath(genpath('Used Functions'),genpath('Control'),genpath('Init and params'),genpath('Modelo dinamico'))
+addpath(genpath('Used Functions'),genpath('Control'),genpath('Init and params'),genpath('Modelo dinamico'),genpath('../Libraries'),genpath('../Modelo CFD DroneBox'))
 
 T_sim  = 0.01; % Freq simulacion
 T_ctrl = 0.01;  % Freq FCS
