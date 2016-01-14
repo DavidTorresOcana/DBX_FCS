@@ -119,7 +119,7 @@ close all
 %% 6. Propeller/motor parameters
 % Go to ..\DroneBoX\Design\Props & Theo\APC thin electric 19x12 prop for finding the propeller data  and model fitting
 
-Tau_motors  = 0.05; % Time  constant of the ESC+Motors  % To be changed/measured/tuned
+Tau_motors  = 0.2; % Time  constant of the ESC+Motors  % To be changed/measured/tuned
 v_i0=sqrt( 1/3*m*g/(2*rho_0*pi*R^2)  ); % Induced velocity in hover
 
 % TEP normal
