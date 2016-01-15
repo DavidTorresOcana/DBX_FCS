@@ -4,7 +4,7 @@ fprintf('\n Welcome to the auto-deployment script: \n   Just press and deploy in
 
 %% Detect simulink files and check if project exist
 
-fprintf(' \n Select the simulink model to be deploy as DBX FCS \n');
+fprintf(' \n Select the simulink model to be deployed as DBX FCS \n');
 
 % inp = input('What is the original value? ','s');
 [FileName,PathName] = uigetfile('*.slx',' Select the simulink model to be deploy as DBX FCS');
@@ -15,7 +15,7 @@ try
     cd C:\px4\Firmware\src\Modules
 catch
     errordlg(sprintf([' No Px4 development files detected:\n',...
-        '    Please ensure the  you installed Px4 files in C:/px4/Firmware \n']),' No Px4 development files detected')
+        '    Please ensure that you installed Px4 files in C:/px4/Firmware \n']),' No Px4 development files detected')
 end
 clear files
 files = dir;
