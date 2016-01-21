@@ -5,7 +5,7 @@ close all
 try
     [~, ~, raw] = xlsread('.\Datos Aero DBX v2.xlsx','Raw Data',['A2:M',num2str(size(Aero_Forc_Mom_data,2)+1)]);
 catch
-    [~, ~, raw] = xlsread('.\model\body\Datos Aero DBX v2.xlsx','Raw Data','A2:M131');
+    [~, ~, raw] = xlsread('.\model\body\CFD Model\Datos Aero DBX v2.xlsx','Raw Data','A2:M131');
     fprintf(' \n Possible loss of info reading from Excel file \n');
 end
 %% Create output variable

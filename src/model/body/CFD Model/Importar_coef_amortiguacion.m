@@ -11,8 +11,8 @@
 
 %% Import the data
 try
-    [~, ~, raw0_0] = xlsread('.\model\body\Datos Aero DBX v2.xlsx','Estimaciones teóricas','A5:A13');
-    [~, ~, raw0_1] = xlsread('.\model\body\Datos Aero DBX v2.xlsx','Estimaciones teóricas','C5:C13');
+    [~, ~, raw0_0] = xlsread('.\model\body\CFD Model\Datos Aero DBX v2.xlsx','Estimaciones teóricas','A5:A13');
+    [~, ~, raw0_1] = xlsread('.\model\body\CFD Model\Datos Aero DBX v2.xlsx','Estimaciones teóricas','C5:C13');
 catch
     
     [~, ~, raw0_0] = xlsread('.\Datos Aero DBX v2.xlsx','Estimaciones teóricas','A5:A13');

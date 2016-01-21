@@ -99,12 +99,14 @@ S_t     = A_M*CMA_t; % m Tail plant surface
 %       Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Modelo aerodinamico V2.docx
 if input(' \n Where do you wnat aero data be load form?\n CFD files       (1) \n Aero data Sheet (2)\n ') ==1
     currr_path =pwd;
-    cd('model/body')
+    cd('model/body/CFD Model')
     auto_xflow;
     cd(currr_path)
 else
     fprintf('\n\n Creating Aero model tables')
     DBX_aero_V2
+    pause
+    close all
     fprintf('\n\n  Nonlinear parametric Aero model')
     Nonlinear_param_aeromodel;
 end
