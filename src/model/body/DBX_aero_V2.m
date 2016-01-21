@@ -2,8 +2,12 @@ close all
 %% De acuerdo al modelo aerodinamico definido en 
 % Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Modelo aerodinamico V2.docx
 %% Import the data
-[~, ~, raw] = xlsread('.\Datos Aero DBX v2.xlsx','Raw Data',['A2:M',num2str(size(Aero_Forc_Mom_data,2)+1)]);
-
+try
+    [~, ~, raw] = xlsread('.\Datos Aero DBX v2.xlsx','Raw Data',['A2:M',num2str(size(Aero_Forc_Mom_data,2)+1)]);
+catch
+    [~, ~, raw] = xlsread('.\model\body\Datos Aero DBX v2.xlsx','Raw Data','A2:M131');
+    fprintf(' \n Possible loss of info reading from Excel file \n');
+end
 %% Create output variable
 data = reshape([raw{:}],size(raw));
 
