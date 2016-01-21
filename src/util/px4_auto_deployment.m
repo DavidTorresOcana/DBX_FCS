@@ -56,7 +56,7 @@ end
 
 
 SH = ['C:\px4\toolchain\msys\1.0\px4_Simulink_deploy.sh'];
-copyfile([curr,'\px4_Simulink_deploy.sh'],SH)
+copyfile([curr,'\util\px4_Simulink_deploy.sh'],SH)
 
 system('.\bin\sh.exe --login -i C:\px4\toolchain\msys\1.0\px4_Simulink_deploy.sh')
 
