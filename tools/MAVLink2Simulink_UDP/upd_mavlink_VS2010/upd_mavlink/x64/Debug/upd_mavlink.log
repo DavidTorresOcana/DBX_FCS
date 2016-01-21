@@ -1,0 +1,21 @@
+﻿Build started 6/17/2013 2:26:41 PM.
+     1>Project "c:\Users\drzadmin\documents\visual studio 2010\Projects\upd_mavlink\upd_mavlink\upd_mavlink.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "x64\Debug\upd_mavlink.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\drzadmin\documents\visual studio 2010\Projects\upd_mavlink\x64\Debug\upd_mavlink.mexw64" /NOLOGO /LIBPATH:C:\opt\boost_1_44_0\stage\lib /LIBPATH:C:\Programs\MATLAB\R2012b\extern\lib\win64\microsoft libmx.lib libmex.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"udp_mavlink.def" /MANIFEST /ManifestFile:"x64\Debug\upd_mavlink.mexw64.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\users\drzadmin\documents\visual studio 2010\Projects\upd_mavlink\x64\Debug\upd_mavlink.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\drzadmin\documents\visual studio 2010\Projects\upd_mavlink\x64\Debug\upd_mavlink.lib" /MACHINE:X64 /DLL x64\Debug\mav2simulink.obj
+         x64\Debug\udp_mavlink_rec.obj
+            Creating library c:\users\drzadmin\documents\visual studio 2010\Projects\upd_mavlink\x64\Debug\upd_mavlink.lib and object c:\users\drzadmin\documents\visual studio 2010\Projects\upd_mavlink\x64\Debug\upd_mavlink.exp
+         upd_mavlink.vcxproj -> c:\users\drzadmin\documents\visual studio 2010\Projects\upd_mavlink\x64\Debug\upd_mavlink.mexw64
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"c:\users\drzadmin\documents\visual studio 2010\Projects\upd_mavlink\x64\Debug\upd_mavlink.mexw64;#2" /manifest x64\Debug\upd_mavlink.mexw64.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\upd_mavlink.unsuccessfulbuild".
+         Touching "x64\Debug\upd_mavlink.lastbuildstate".
+     1>Done Building Project "c:\Users\drzadmin\documents\visual studio 2010\Projects\upd_mavlink\upd_mavlink\upd_mavlink.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.74

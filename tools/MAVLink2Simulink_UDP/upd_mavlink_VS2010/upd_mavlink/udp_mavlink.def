@@ -1,0 +1,3 @@
+LIBRARY	upd_mavlink.mexw64
+EXPORTS 
+mexFunction

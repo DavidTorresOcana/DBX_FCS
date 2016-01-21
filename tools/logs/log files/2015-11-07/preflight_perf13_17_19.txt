@@ -1,0 +1,87 @@
+PERFORMANCE COUNTERS PRE-FLIGHT
+
+sd write: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+px4flow_buffer_overflows: 0 events
+px4flow_comms_errors: 0 events
+px4flow_read: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+px4flow_buffer_overflows: 0 events
+px4flow_comms_errors: 0 events
+px4flow_read: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+ekf_att_pos_reset: 0 events
+ekf_att_pos_aspd_upd: 0 events, 0us avg, min 0us max 0us 0.000us rms
+ekf_att_pos_baro_upd: 15 events, 14007us avg, min 6965us max 38990us 10195.462us rms
+ekf_att_pos_gps_upd: 1 events, 0us avg, min 0us max 0us   NaNus rms
+ekf_att_pos_mag_upd: 20 events, 11405us avg, min 8883us max 29843us 5522.225us rms
+ekf_att_pos_gyro_upd: 50 events, 4562us avg, min 12us max 26038us 5385.386us rms
+ekf_att_pos_est_interval: 26 events, 8773us avg, min 2050us max 24001us 3523.470us rms
+ekf_att_pos_estimator: 1 events, 0 overruns, 381us elapsed, 381us avg, min 381us max 381us   NaNus rms
+px4flow_buffer_overflows: 0 events
+px4flow_comms_errors: 0 events
+px4flow_read: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+px4flow_buffer_overflows: 0 events
+px4flow_comms_errors: 0 events
+px4flow_read: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+px4flow_buffer_overflows: 0 events
+px4flow_comms_errors: 0 events
+px4flow_read: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+px4flow_buffer_overflows: 0 events
+px4flow_comms_errors: 0 events
+px4flow_read: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+mavlink_txe: 16 events
+mavlink_el: 702 events, 0 overruns, 47110us elapsed, 67us avg, min 37us max 2207us 126.523us rms
+mavlink_txe: 0 events
+mavlink_el: 708 events, 0 overruns, 44258us elapsed, 62us avg, min 37us max 887us 69.330us rms
+navigator: 123 events, 0 overruns, 13033us elapsed, 105us avg, min 11us max 10431us 941.120us rms
+mc_att_control: 200 events, 0 overruns, 9956us elapsed, 49us avg, min 15us max 482us 40.129us rms
+mavlink_txe: 0 events
+mavlink_el: 768 events, 0 overruns, 423911us elapsed, 551us avg, min 34us max 324028us 11744.282us rms
+io latency: 165 events, 0 overruns, 133203us elapsed, 807us avg, min 291us max 1186us 227.835us rms
+io write: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+io update: 262 events, 0 overruns, 360200us elapsed, 1374us avg, min 262us max 48225us 4090.895us rms
+io_badidle  : 0 events
+io_idle     : 867 events
+io_uarterrs : 0 events
+io_protoerrs: 0 events
+io_dmaerrs  : 0 events
+io_crcerrs  : 0 events
+io_timeouts : 0 events
+io_retries  : 0 events
+io_dmasetup : 869 events, 0 overruns, 5579us elapsed, 6us avg, min 3us max 272us 14.238us rms
+io_txns     : 871 events, 0 overruns, 332593us elapsed, 381us avg, min 135us max 21417us 737.010us rms
+px4flow_buffer_overflows: 0 events
+px4flow_comms_errors: 0 events
+px4flow_read: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+px4flow_buffer_overflows: 0 events
+px4flow_comms_errors: 0 events
+px4flow_read: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+sensor task update: 777 events, 0 overruns, 128688us elapsed, 165us avg, min 52us max 21713us 1323.911us rms
+lsm303d_accel_duplicates: 563 events
+lsm303d_bad_values: 0 events
+lsm303d_bad_registers: 0 events
+lsm303d_mag_read: 325 events, 0 overruns, 7495us elapsed, 23us avg, min 23us max 24us 0.241us rms
+lsm303d_accel_read: 3096 events, 0 overruns, 86229us elapsed, 27us avg, min 20us max 30us 3.401us rms
+l3gd20_duplicates: 2137 events
+l3gd20_bad_registers: 0 events
+l3gd20_errors: 0 events
+l3gd20_read: 4553 events, 0 overruns, 121974us elapsed, 26us avg, min 22us max 32us 4.452us rms
+mpu6000_duplicates: 815 events
+mpu6000_reset_retries: 0 events
+mpu6000_good_transfers: 3259 events
+mpu6000_bad_registers: 0 events
+mpu6000_bad_transfers: 0 events
+mpu6000_read: 4075 events, 0 overruns, 185282us elapsed, 45us avg, min 30us max 59us 7.288us rms
+mpu6000_gyro_read: 0 events
+mpu6000_accel_read: 0 events
+ctrl_latency: 164 events, 0 overruns, 59210us elapsed, 361us avg, min 18us max 752us 244.438us rms
+sys_latency: 0 events, 0 overruns, 0us elapsed, 0us avg, min 0us max 0us 0.000us rms
+hmc5883_conf_errors: 0 events
+hmc5883_range_errors: 0 events
+hmc5883_buffer_overflows: 330 events
+hmc5883_comms_errors: 0 events
+hmc5883_read: 372 events, 0 overruns, 367129us elapsed, 986us avg, min 870us max 5384us 304.743us rms
+adc_samples: 3220 events, 0 overruns, 8674us elapsed, 2us avg, min 2us max 3us 0.461us rms
+ms5611_buffer_overflows: 271 events
+ms5611_comms_errors: 0 events
+ms5611_measure: 367 events, 0 overruns, 2922us elapsed, 7us avg, min 6us max 100us 8.431us rms
+ms5611_read: 366 events, 0 overruns, 27668us elapsed, 75us avg, min 10us max 460us 51.529us rms
+DMA allocations: 10 events
