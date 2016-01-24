@@ -12,6 +12,10 @@ addpath(genpath('Used Functions'),genpath('Control'),genpath('Init and params'),
 
 T_sim  = 0.01; % Freq simulacion
 T_ctrl = 0.01;  % Freq FCS
+
+Time_scaling_factor     =  1; % This by definition must be 1, but in David's 
+                                    % computer seems to be 0.33
+
 load('Model_init_cond_Bus.mat')
 load('Model_output_Bus.mat')
 %% 1.  Load data of airframe
@@ -94,7 +98,7 @@ block_metadat = Simulink.MDLInfo('DBX_control_harness');
 fprintf('  %s  ¦   %s  \n',block_metadat.BlockDiagramName,block_metadat.ModelVersion)
 block_metadat = Simulink.MDLInfo('DBX_model_all');
 fprintf('  %s        ¦   %s  \n',block_metadat.BlockDiagramName,block_metadat.ModelVersion)
-block_metadat = Simulink.MDLInfo('dbx_control_v0_06');
+block_metadat = Simulink.MDLInfo('dbx_control');
 fprintf('  %s    ¦   %s  \n',block_metadat.BlockDiagramName,block_metadat.ModelVersion)
 
 
