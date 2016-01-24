@@ -13,7 +13,7 @@ addpath(genpath('Used Functions'),genpath('Control'),genpath('Init and params'),
 T_sim  = 0.01; % Freq simulacion
 T_ctrl = 0.01;  % Freq FCS
 
-Time_scaling_factor     =  1; % This by definition must be 1, but in David's 
+Time_scaling_factor     =  0.33; % This by definition must be 1, but in David's 
                                     % computer seems to be 0.33
 
 load('Model_init_cond_Bus.mat')
