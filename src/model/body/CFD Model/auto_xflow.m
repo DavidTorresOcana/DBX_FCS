@@ -4,7 +4,7 @@ close all
 % clc
 
 fprintf('\n\n Loading CFD files')
-%% 1. Obtención de lista de ficheros en carpeta /data
+%% 1. Obtención de lista de ficheros en carpeta /data DBX 1.X
 
 addpath(pwd);
 dir_list = get_xflow_dirs;
@@ -12,7 +12,7 @@ size_dir_list = size(dir_list,2);
 counter_data = 1;
 
 curr_path = pwd;
-cd data
+cd('data DBX 1.0')
 %% 2. Extracción de datos
 % Extraer tabla CFD
 Tabla_CFD = Import_CFD_table('Hoja de casos CFD.xlsx');
