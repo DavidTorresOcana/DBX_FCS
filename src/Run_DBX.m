@@ -99,7 +99,7 @@ fprintf('  %s  ¦   %s  \n',block_metadat.BlockDiagramName,block_metadat.ModelVer
 block_metadat = Simulink.MDLInfo('DBX_model_all');
 fprintf('  %s        ¦   %s  \n',block_metadat.BlockDiagramName,block_metadat.ModelVersion)
 block_metadat = Simulink.MDLInfo('dbx_control');
-fprintf('  %s    ¦   %s  \n',block_metadat.BlockDiagramName,block_metadat.ModelVersion)
+fprintf('  %s          ¦   %s  \n',block_metadat.BlockDiagramName,block_metadat.ModelVersion)
 
 
 %% 7. Open my dear Harness

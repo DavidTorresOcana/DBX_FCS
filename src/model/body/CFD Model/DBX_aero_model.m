@@ -3,9 +3,9 @@ close all
 % Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Modelo aerodinamico V2.docx
 %% Import the data
 try
-    [~, ~, raw] = xlsread('.\Datos Aero DBX v2.xlsx','Raw Data',['A2:M',num2str(size(Aero_Forc_Mom_data,2)+1)]);
+    [~, ~, raw] = xlsread(['.\Datos Aero DBX ',Data_path(end-2:end),'.xlsx'],'Raw Data',['A2:M',num2str(size(Aero_Forc_Mom_data,2)+1)]);
 catch
-    [~, ~, raw] = xlsread('.\model\body\CFD Model\Datos Aero DBX v2.xlsx','Raw Data','A2:M131');
+    [~, ~, raw] = xlsread(['.\model\body\CFD Model\Datos Aero DBX ',Data_path(end-2:end),'.xlsx'],'Raw Data','A2:M131');
     fprintf(' \n Possible loss of info reading from Excel file \n');
 end
 %% Create output variable

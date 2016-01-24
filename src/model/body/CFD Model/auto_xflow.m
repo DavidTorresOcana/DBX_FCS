@@ -3,7 +3,15 @@
 close all
 % clc
 
-fprintf('\n\n Loading CFD files')
+global Data_path
+% % % % IMPORTANT!!!!!!
+% % % Data_path= 'data DBX 1.0'; % Select from here the source of data 
+% % % 
+% % % fprintf(['\n\n Loading CFD files from ',Data_path,'\n'])
+% % % inmsg = input('      Is this correct? y/n  ','s');
+% % % if strcmp(inmsg,'n')
+% % %     return
+% % % end
 %% 1. Obtención de lista de ficheros en carpeta /data DBX 1.X
 
 addpath(pwd);
@@ -12,10 +20,10 @@ size_dir_list = size(dir_list,2);
 counter_data = 1;
 
 curr_path = pwd;
-cd('data DBX 1.0')
+cd(Data_path)
 %% 2. Extracción de datos
 % Extraer tabla CFD
-Tabla_CFD = Import_CFD_table('Hoja de casos CFD.xlsx');
+Tabla_CFD = Import_CFD_table(['Hoja de casos CFD DBX ',Data_path(end-2:end),'.xlsx']);
 
 for i = 1:size_dir_list
     cd (dir_list{i})
@@ -125,17 +133,17 @@ end
 %% 6. Guardar en un Excel para psost procesado
 fprintf('\n\n Generating Excel data file')
 
-writetable( struct2table(Aero_Coef_data) ,'Datos Aero DBX v2.xlsx','Sheet','Raw Data')
+writetable( struct2table(Aero_Coef_data) ,['Datos Aero DBX ',Data_path(end-2:end),'.xlsx'],'Sheet','Raw Data')
 
 if input(' \n Deseas post-procesar los datos?\n Si (1) \n No (2)\n ') ==1
-    system('Datos Aero DBX v2.xlsx')
+    system(['Datos Aero DBX ',Data_path(end-2:end),'.xlsx'])
     return
 end
     
 %% 7. Crear lookup tables y aerocoef
 fprintf('\n\n Creating Aero model tables')
 
-DBX_aero_V2
+DBX_aero_model
 
 fprintf(' \n \n Pulse una tecla para continuar...')
 pause

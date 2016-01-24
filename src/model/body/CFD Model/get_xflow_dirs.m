@@ -1,8 +1,8 @@
 % Este script accede a la carpeta data para listar las diferentes carpetas
 
 function dir_list = get_xflow_dirs()
-
-    cd data
+    global Data_path
+    cd(Data_path)
 
     temp = dir;
     size_temp = size(temp,1);

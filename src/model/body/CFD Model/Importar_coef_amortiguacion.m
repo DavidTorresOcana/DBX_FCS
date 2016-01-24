@@ -11,12 +11,12 @@
 
 %% Import the data
 try
-    [~, ~, raw0_0] = xlsread('.\model\body\CFD Model\Datos Aero DBX v2.xlsx','Estimaciones teóricas','A5:A13');
-    [~, ~, raw0_1] = xlsread('.\model\body\CFD Model\Datos Aero DBX v2.xlsx','Estimaciones teóricas','C5:C13');
+    [~, ~, raw0_0] = xlsread(['.\model\body\CFD Model\Datos Aero DBX ',Data_path(end-2:end),'.xlsx'],'Estimaciones teóricas','A5:A13');
+    [~, ~, raw0_1] = xlsread(['.\model\body\CFD Model\Datos Aero DBX ',Data_path(end-2:end),'.xlsx'],'Estimaciones teóricas','C5:C13');
 catch
     
-    [~, ~, raw0_0] = xlsread('.\Datos Aero DBX v2.xlsx','Estimaciones teóricas','A5:A13');
-    [~, ~, raw0_1] = xlsread('.\Datos Aero DBX v2.xlsx','Estimaciones teóricas','C5:C13');
+    [~, ~, raw0_0] = xlsread(['.\Datos Aero DBX ',Data_path(end-2:end),'.xlsx'],'Estimaciones teóricas','A5:A13');
+    [~, ~, raw0_1] = xlsread(['.\Datos Aero DBX ',Data_path(end-2:end),'.xlsx'],'Estimaciones teóricas','C5:C13');
 end
 raw = [raw0_0,raw0_1];
 raw(cellfun(@(x) ~isempty(x) && isnumeric(x) && isnan(x),raw)) = {''};

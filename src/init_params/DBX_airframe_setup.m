@@ -96,7 +96,17 @@ S_t     = A_M*CMA_t; % m Tail plant surface
 
 % Modelo Aerodinamico CFD V2(Luis-David): Se supone es muy muy preciso
 %  De acuerdo al modelo aerodinamico definido en
-%       Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Modelo aerodinamico V2.docx
+%       Dropbox\DroneBoX\Ingeniería\03. Software y sistemas\SW\Modelado y FCS\Modelado\Modelo aerodinamico.docx
+global Data_path
+% IMPORTANT!!!!!!
+Data_path= 'data DBX 1.0'; % Select from here the source of data 
+
+fprintf(['\n\n Loading CFD files from ',Data_path,'\n'])
+inmsg = input('      Is this correct? y/n  ','s');
+if strcmp(inmsg,'n')
+    return
+end
+
 if input(' \n Where do you wnat aero data be load form?\n CFD files       (1) \n Aero data Sheet (2)\n ') ==1
     currr_path =pwd;
     cd('model/body/CFD Model')
@@ -104,7 +114,7 @@ if input(' \n Where do you wnat aero data be load form?\n CFD files       (1) \n
     cd(currr_path)
 else
     fprintf('\n\n Creating Aero model tables')
-    DBX_aero_V2
+    DBX_aero_model
     pause
     close all
     fprintf('\n\n  Nonlinear parametric Aero model')
