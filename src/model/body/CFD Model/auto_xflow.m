@@ -4,8 +4,8 @@ close all
 % clc
 
 global Data_path
-% % % % IMPORTANT!!!!!!
-% % % Data_path= 'data DBX 1.0'; % Select from here the source of data 
+% IMPORTANT!!!!!!
+% % Data_path= 'data DBX 1.0'; % Select from here the source of data 
 % % % 
 % % % fprintf(['\n\n Loading CFD files from ',Data_path,'\n'])
 % % % inmsg = input('      Is this correct? y/n  ','s');

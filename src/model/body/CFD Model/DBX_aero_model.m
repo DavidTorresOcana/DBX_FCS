@@ -66,7 +66,11 @@ for j=1:size(Beta_unique,1)
     end
 end
 figure
-surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_X(:,:))
+try
+    surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_X(:,:))
+catch
+    plot(Alpha_unique,DBX_aero.C_X(:,:))
+end
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_X')
@@ -122,7 +126,12 @@ for j=1:size(Beta_unique,1)
     end
 end
 figure
-surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_Y(:,:))
+try
+    surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_Y(:,:))
+catch
+    plot(Alpha_unique,DBX_aero.C_Y(:,:))
+end
+
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_Y')
@@ -181,7 +190,11 @@ for j=1:size(Beta_unique,1)
     end
 end
 figure
-surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_Z(:,:))
+try
+    surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_Z(:,:))
+catch
+    plot(Alpha_unique,DBX_aero.C_Z(:,:))
+end
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_Z')
@@ -239,7 +252,11 @@ for j=1:size(Beta_unique,1)
     end
 end
 figure
-surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_L(:,:))
+try
+    surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_L(:,:))
+catch
+    plot(Alpha_unique,DBX_aero.C_L(:,:))
+end
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_L')
@@ -297,7 +314,11 @@ for j=1:size(Beta_unique,1)
     end
 end
 figure
-surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_D(:,:))
+try
+    surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_D(:,:))
+catch
+    plot(Alpha_unique,DBX_aero.C_D(:,:))
+end
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_D')
@@ -354,7 +375,11 @@ for j=1:size(Beta_unique,1)
     end
 end
 figure
-surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_l(:,:))
+try
+    surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_l(:,:))
+catch
+    plot(Alpha_unique,DBX_aero.C_l(:,:))
+end
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_l')
@@ -430,7 +455,11 @@ for j=1:size(Beta_unique,1)
     end
 end
 figure
-surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_m(:,:))
+try
+    surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_m(:,:))
+catch
+    plot(Alpha_unique,DBX_aero.C_m(:,:))
+end
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_m')
@@ -466,7 +495,11 @@ legend(legend_str)
 %% C_m_delta_ele efectivo
 clear C_m_delta_ele_MAT
 figure
-surf(repmat(Alpha_unique,1,size(delta_elev_unique,1)),repmat(delta_elev_unique',size(Alpha_unique,1),1),DBX_aero.C_m_delta_elev(:,:))
+try
+    surf(repmat(Alpha_unique,1,size(delta_elev_unique,1)),repmat(delta_elev_unique',size(Alpha_unique,1),1),DBX_aero.C_m_delta_elev(:,:))
+catch
+    plot(Alpha_unique,DBX_aero.C_m_delta_elev(:,:))
+end
 xlabel('Alpha')
 ylabel('\delta_{ele}')
 zlabel('C_m_{\delta}_{elev}')
@@ -509,7 +542,11 @@ for j=1:size(Beta_unique,1)
     end
 end
 figure
-surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_n(:,:))
+try
+    surf(repmat(Alpha_unique,1,size(Beta_unique,1)),repmat(Beta_unique',size(Alpha_unique,1),1),DBX_aero.C_n(:,:))
+catch
+    plot(Alpha_unique,DBX_aero.C_n(:,:))
+end
 xlabel('Alpha')
 ylabel('Beta')
 zlabel('C_n')
