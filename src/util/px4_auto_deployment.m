@@ -12,7 +12,7 @@ fprintf(' \n Select the simulink model to be deployed as DBX FCS \n');
 curr = pwd;
 
 try
-    cd C:\px4\Firmware\src\Modules
+    cd C:\px4\Firmware\src\modules
 catch
     errordlg(sprintf([' No Px4 development files detected:\n',...
         '    Please ensure that you installed Px4 files in C:/px4/Firmware \n']),' No Px4 development files detected')
@@ -31,7 +31,7 @@ if ~sum( strcmp(FileName(1:end-4),{files(:).name}) )
 end
 
 %% Rename, move and codegen
-new_dir = ['C:\px4\Firmware\src\Modules\',FileName(1:end-4)];
+new_dir = ['C:\px4\Firmware\src\modules\',FileName(1:end-4)];
 cd(new_dir)
 if exist('dbx_control.slx', 'file')==4
   delete('dbx_control.slx');
