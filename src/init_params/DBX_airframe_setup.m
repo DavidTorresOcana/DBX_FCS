@@ -108,10 +108,10 @@ if strcmp(inmsg,'n')
 end
 
 if input(' \n Where do you wnat aero data be load form?\n CFD files       (1) \n Aero data Sheet (2)\n ') ==1
-    currr_path =pwd;
+    DBX_airframe_path =pwd;
     cd('model/body/CFD Model')
     auto_xflow;
-    cd(currr_path)
+    cd(DBX_airframe_path)
 else
     fprintf('\n\n Creating Aero model tables')
     DBX_aero_model
@@ -154,7 +154,7 @@ lambda_0_Q  = 0.1155;
 kappa_Q     = -3.7711;
 
 % Load the AB model of induced velocities. Propeller model
-load('ABModelDimless.mat')
+load('ABModelDimLess.mat')
 figure
 [X,Y]=meshgrid(Vx_adim,Vz_adim);
 surf(X,Y,v_i_adim');
