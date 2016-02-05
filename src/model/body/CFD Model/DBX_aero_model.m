@@ -11,9 +11,9 @@ if (ispc)
     end
 elseif (isunix)
     try
-        [~, ~, raw] = xlsread(['Datos Aero DBX ',Data_path(end-2:end),'_open.xlsx'],'Raw Data',['A2:M',num2str(size(Aero_Forc_Mom_data,2)+1)]);
+        [~, ~, raw] = xlsread(['Datos Aero DBX ',Data_path(end-2:end),'.xlsx'],'Raw Data',['A2:M',num2str(size(Aero_Forc_Mom_data,2)+1)]);
     catch
-        [~, ~, raw] = xlsread(['model/body/CFD Model/Datos Aero DBX ',Data_path(end-2:end),'_open.xlsx'],'Raw Data','A2:M131');
+        [~, ~, raw] = xlsread(['model/body/CFD Model/Datos Aero DBX ',Data_path(end-2:end),'.xlsx'],'Raw Data','A2:M131');
         fprintf(' \n Possible loss of info reading from Excel file \n');
     end
 end

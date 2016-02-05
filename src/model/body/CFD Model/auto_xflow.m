@@ -157,7 +157,7 @@ elseif (isunix)
     end
     test_table = struct2table(Aero_Coef_data);
     test_table_cell = table2cell(test_table);
-    xlwrite(['Datos Aero DBX ',Data_path(end-2:end),'_open','.xlsx'], [test_table.Properties.VariableNames;test_table_cell], 'Raw Data');
+    xlwrite(['Datos Aero DBX ',Data_path(end-2:end),'.xlsx'], [test_table.Properties.VariableNames;test_table_cell], 'Raw Data');
 end
 
 if input(' \n Deseas post-procesar los datos?\n Si (1) \n No (2)\n ') ==1
