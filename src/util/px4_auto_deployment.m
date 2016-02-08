@@ -9,56 +9,67 @@ fprintf(' \n Select the simulink model to be deployed as DBX FCS \n');
 % inp = input('What is the original value? ','s');
 [FileName,PathName] = uigetfile('*.slx',' Select the simulink model to be deploy as DBX FCS');
 
-curr = pwd;
+if (ispc)
+    curr = pwd;
 
-try
-    cd C:\px4\Firmware\src\modules
-catch
-    errordlg(sprintf([' No Px4 development files detected:\n',...
-        '    Please ensure that you installed Px4 files in C:/px4/Firmware \n']),' No Px4 development files detected')
-end
-clear files
-files = dir;
+    try
+        cd C:\px4\Firmware\src\modules
+    catch
+        errordlg(sprintf([' No Px4 development files detected:\n',...
+            '    Please ensure that you installed Px4 files in C:/px4/Firmware \n']),' No Px4 development files detected')
+    end
+    clear files
+    files = dir;
 
-if ~sum( strcmp(FileName(1:end-4),{files(:).name}) )
+    if ~sum( strcmp(FileName(1:end-4),{files(:).name}) )
+        cd(curr)
+        errordlg(sprintf([' You have NOT created a Px4 app for this Simulink proyect:\n',...
+            '    * The app FOLDER in Px4 should have the same name as Simulink model\n',...
+            '    * Once deployed, the app will be called dbx_control\n',...
+            '    * Create the appropiate app folder and the appropiate Wrapper for this simulink Model!\n',...
+            '    * Configure the Px4 Makefiles to compile this new app with name as the Simunlk model \n']),'NO Px4 app file detected')
+        return
+    end
+
+    %% Rename, move and codegen
+    new_dir = ['C:\px4\Firmware\src\modules\',FileName(1:end-4)];
+    cd(new_dir)
+    if exist('dbx_control.slx', 'file')==4
+      delete('dbx_control.slx');
+    end
+    pause(0.5)
+    copyfile([PathName,FileName],[new_dir,'\dbx_control.slx'])
+    pause(0.5)
+
+    slbuild('dbx_control')
+
+    %% Deployment
+
+
+
+    try
+        cd('C:\px4\toolchain\msys\1.0')
+        delete('px4_Simulink_deploy.sh')
+    catch
+        errordlg('You dont have the appropiate toolchain installed')
+        return
+    end
+
+
+    SH = ['C:\px4\toolchain\msys\1.0\px4_Simulink_deploy.sh'];
+    copyfile([curr,'\util\px4_Simulink_deploy.sh'],SH)
+
+    system('.\bin\sh.exe --login -i C:\px4\toolchain\msys\1.0\px4_Simulink_deploy.sh')
+
     cd(curr)
-    errordlg(sprintf([' You have NOT created a Px4 app for this Simulink proyect:\n',...
-        '    * The app FOLDER in Px4 should have the same name as Simulink model\n',...
-        '    * Once deployed, the app will be called dbx_control\n',...
-        '    * Create the appropiate app folder and the appropiate Wrapper for this simulink Model!\n',...
-        '    * Configure the Px4 Makefiles to compile this new app with name as the Simunlk model \n']),'NO Px4 app file detected')
-    return
+    
+elseif (isunix)
+    % Read http://es.mathworks.com/matlabcentral/newsreader/view_thread/255846
+    % Might change the PATH for different architectures, this is the one
+    % for linux 64bit
+    setenv LD_PRELOAD '/usr/lib64/libstdc++.so.6'
+    slbuild('dbx_control')
+    
+    % TODO Finish the rest of the script!
 end
-
-%% Rename, move and codegen
-new_dir = ['C:\px4\Firmware\src\modules\',FileName(1:end-4)];
-cd(new_dir)
-if exist('dbx_control.slx', 'file')==4
-  delete('dbx_control.slx');
-end
-pause(0.5)
-copyfile([PathName,FileName],[new_dir,'\dbx_control.slx'])
-pause(0.5)
-
-slbuild('dbx_control')
-
-%% Deployment
-
-
-
-try
-    cd('C:\px4\toolchain\msys\1.0')
-    delete('px4_Simulink_deploy.sh')
-catch
-    errordlg('You dont have the appropiate toolchain installed')
-    return
-end
-
-
-SH = ['C:\px4\toolchain\msys\1.0\px4_Simulink_deploy.sh'];
-copyfile([curr,'\util\px4_Simulink_deploy.sh'],SH)
-
-system('.\bin\sh.exe --login -i C:\px4\toolchain\msys\1.0\px4_Simulink_deploy.sh')
-
-cd(curr)
 
