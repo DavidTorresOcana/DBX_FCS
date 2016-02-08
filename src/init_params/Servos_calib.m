@@ -9,33 +9,33 @@
 
 %% Introduccion datos de puntos
 % Servo 1: motor delantero izquierdo
-Servo_calib.Servo1.Punto_A.Servo_deg = -5.4; % Rotacion del servo para maxima deflexion permitida
-Servo_calib.Servo1.Punto_A.Deflexion_deg =4.5; % Maxima deflexion permitida
+Servo_calib.Servo1.Punto_A.Servo_deg = -6.6; % Rotacion del servo para maxima deflexion permitida
+Servo_calib.Servo1.Punto_A.Deflexion_deg =9; % Maxima deflexion permitida
 
 Servo_calib.Servo1.Punto_B.Servo_deg = 0; % Por definicion esto es 0
 Servo_calib.Servo1.Punto_B.Deflexion_deg =-4.5; % Deflexion de la superficie para 1500us
 
-Servo_calib.Servo1.Punto_C.Servo_deg =60.3;  % Rotacion del servo para Minima deflexion permitida
-Servo_calib.Servo1.Punto_C.Deflexion_deg = -90; % Minima deflexion permitida
+Servo_calib.Servo1.Punto_C.Servo_deg =75;  % Rotacion del servo para Minima deflexion permitida
+Servo_calib.Servo1.Punto_C.Deflexion_deg = -96; % Minima deflexion permitida
 
 % Servo 2: motor delantero derecho
-Servo_calib.Servo2.Punto_A.Servo_deg = -7.8; % Rotacion del servo para maxima deflexion permitida
-Servo_calib.Servo2.Punto_A.Deflexion_deg =7.5; % Maxima deflexion permitida
+Servo_calib.Servo2.Punto_A.Servo_deg = -6; % Rotacion del servo para maxima deflexion permitida
+Servo_calib.Servo2.Punto_A.Deflexion_deg =13; % Maxima deflexion permitida
 
 Servo_calib.Servo2.Punto_B.Servo_deg = 0; % Por definicion esto es 0
-Servo_calib.Servo2.Punto_B.Deflexion_deg =-0.5; % Deflexion de la superficie para 1500us
+Servo_calib.Servo2.Punto_B.Deflexion_deg =-3; % Deflexion de la superficie para 1500us
 
-Servo_calib.Servo2.Punto_C.Servo_deg =67.5;  % Rotacion del servo para Minima deflexion permitida
-Servo_calib.Servo2.Punto_C.Deflexion_deg = -90; % Minima deflexion permitida
+Servo_calib.Servo2.Punto_C.Servo_deg =70.05;  % Rotacion del servo para Minima deflexion permitida
+Servo_calib.Servo2.Punto_C.Deflexion_deg = -94; % Minima deflexion permitida
 % Servo 3: motor trasero
-Servo_calib.Servo3.Punto_A.Servo_deg = 90; % Rotacion del servo para maxima deflexion permitida
-Servo_calib.Servo3.Punto_A.Deflexion_deg = 19.5; % Maxima deflexion permitida
+Servo_calib.Servo3.Punto_A.Servo_deg = 89.25; % Rotacion del servo para maxima deflexion permitida
+Servo_calib.Servo3.Punto_A.Deflexion_deg = 18.5; % Maxima deflexion permitida
 
 Servo_calib.Servo3.Punto_B.Servo_deg = 0; % Por definicion esto es 0
-Servo_calib.Servo3.Punto_B.Deflexion_deg =0; % Deflexion de la superficie para 1500us
+Servo_calib.Servo3.Punto_B.Deflexion_deg =-3; % Deflexion de la superficie para 1500us
 
 Servo_calib.Servo3.Punto_C.Servo_deg = -90;  % Rotacion del servo para Minima deflexion permitida
-Servo_calib.Servo3.Punto_C.Deflexion_deg =-21 ; % Minima deflexion permitida
+Servo_calib.Servo3.Punto_C.Deflexion_deg =-19 ; % Minima deflexion permitida
 % Servo 4:ruddervator izquierdo
 Servo_calib.Servo4.Punto_A.Servo_deg = -66.3; % Rotacion del servo para maxima deflexion permitida
 Servo_calib.Servo4.Punto_A.Deflexion_deg =47; % Maxima deflexion permitida
