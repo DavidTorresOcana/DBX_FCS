@@ -8,5 +8,8 @@ Hi! Welcome to DroneBoX Flight Control System repository.
 
 ### How do I get set up? ###
 
-* Summary of set up
 * To successfully compile DroneBoX FCS you will need to have installed the PX4 toolchain. A more detailed tutorial is coming.
+
+## Video demo
+
+[![IDBX demo](https://img.youtube.com/vi/yXMoO3vNKcA/0.jpg)](https://www.youtube.com/watch?v=yXMoO3vNKcA)
